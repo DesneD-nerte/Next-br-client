@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Layout from "../components/layout/layout";
 import Menu from "../components/menu/Menu";
+import { Search } from "../components/Search/Search";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -16,7 +17,9 @@ const Home: NextPage = () => {
 
             <Layout>
                 <div className={styles.container}>
-                    <main className={styles.main}></main>
+                    <main className={styles.main}>
+                        <Search></Search>
+                    </main>
                     {/* <footer className={styles.footer}></footer> */}
                 </div>
             </Layout>

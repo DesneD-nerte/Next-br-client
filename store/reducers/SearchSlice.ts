@@ -1,13 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IItem } from "../../models/IITem";
 
 interface SearchState {
     searchValue: string
     visible: boolean
+    items: IItem[]
 }
 
 const initialState: SearchState = {
     searchValue: "",
-    visible: false
+    visible: false,
+    items: []
 }
 
 export const searchSlice = createSlice({
@@ -19,10 +22,13 @@ export const searchSlice = createSlice({
         },
         setVisible: (state, action: PayloadAction<boolean>) => {
             state.visible = action.payload;
+        },
+        itemsFetching: (state, action: PayloadAction<IItem[]>) => {
+            state.items = action.payload;
         }
     }
 })
 
-export const { setSearch, setVisible } = searchSlice.actions;
+export const { setSearch, setVisible, itemsFetching } = searchSlice.actions;
 
 export default searchSlice.reducer;
