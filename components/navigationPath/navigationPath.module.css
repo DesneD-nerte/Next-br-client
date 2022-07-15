@@ -1,0 +1,14 @@
+.onePath {
+    display: inline-block;
+}
+
+.onePath::after {
+    margin-left: 5px;
+    margin-right: 5px;
+    content: "/";
+}
+
+.onePath:nth-last-child(1)::after {
+    content: none
+}
+
