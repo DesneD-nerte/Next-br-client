@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./menu.module.css";
 import { routeProperties } from "../../types/routeProperties";
+import { Routes } from "./components/Routes";
 
 // type routeProperties = {
 //     name: string;
@@ -16,7 +17,7 @@ type menuRoutesProps = {
 
 function Menu({ routes }: menuRoutesProps) {
     return (
-        <header>
+        <header className={styles.menuHeader}>
             <nav className={styles.menuNav}>
                 <div className={styles.menuContainer}>
                     <div className={styles.menuMain}>
@@ -25,7 +26,7 @@ function Menu({ routes }: menuRoutesProps) {
                         </div>
 
                         <Link href="/">
-                            <a>
+                            <a className={styles.logo}>
                                 <Image
                                     src="/brandImage.png"
                                     width={170}
@@ -43,73 +44,7 @@ function Menu({ routes }: menuRoutesProps) {
                         </div>
                     </div>
 
-                    <div className={styles.menuLinks}>
-                        <ul>
-                            {routes.map((oneMenuRoute: any) => {
-                                return (
-                                    <li className={styles.onePath}>
-                                        <Link href={oneMenuRoute.path}>
-                                            <a className={styles.onePath__navLink}>
-                                                {oneMenuRoute.name}
-                                            </a>
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-
-                    {/* <ul>
-                        <li className={styles.onePath}>
-                            <Link href="/">
-                                <a>Пункт 1</a>
-                            </Link>
-
-                            <ul className={styles.onePath__navList}>
-                                <li className={styles.onePath__navItem}>
-                                    <Link href="/">
-                                        <a className={styles.onePath__navLink}>
-                                            Скрытое 1
-                                        </a>
-                                    </Link>
-                                </li>
-
-                                <li className={styles.onePath__navItem}>
-                                    <Link href="/">
-                                        <a className={styles.onePath__navLink}>
-                                            Скрытое 1
-                                        </a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li className={styles.onePath}>
-                            <Link href="/">
-                                <a>Пункт 2</a>
-                            </Link>
-                        </li>
-                        <li className={styles.onePath}>
-                            <Link href="/">
-                                <a>Пункт 3</a>
-                            </Link>
-                        </li>
-                        <li className={styles.onePath}>
-                            <Link href="/">
-                                <a>Пункт 4</a>
-                            </Link>
-                        </li>
-                        <li className={styles.onePath}>
-                            <Link href="/">
-                                <a>Пункт 5</a>
-                            </Link>
-                        </li>
-                        <li className={styles.onePath}>
-                            <Link href="/">
-                                <a>Пункт 6</a>
-                            </Link>
-                        </li>
-                    </ul> */}
+                    <Routes routes={routes} />
                 </div>
             </nav>
         </header>

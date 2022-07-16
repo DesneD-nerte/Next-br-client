@@ -39,8 +39,18 @@
 
 const siteMap = [
     {
-        name: "Женщины",
-        path: "./women"
+        name: "Women",
+        path: "./women",
+        children: [
+            {
+                name: "Pants",
+                path: "./women/pants"
+            },
+            {
+                name: "Shoes",
+                path: "./women/shoes"
+            }
+        ]
     },
     {
         name: "Факультеты",

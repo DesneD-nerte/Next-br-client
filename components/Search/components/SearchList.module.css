@@ -1,0 +1,8 @@
+.searchedContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sectionContainer {
+    flex: 1;
+}

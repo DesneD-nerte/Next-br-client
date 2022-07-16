@@ -1,7 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
+import { IItem } from "../../../models/IITem";
 
-function SearchItem() {
-    return <div>SearchItem</div>;
-}
+type SearchItemProps = {
+    item: IItem;
+};
+
+const SearchItem: FC<SearchItemProps> = (props: SearchItemProps) => {
+    return <div>{props.item.name}</div>;
+};
 
 export default SearchItem;

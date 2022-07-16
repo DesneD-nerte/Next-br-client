@@ -1,0 +1,13 @@
+.form {
+    background-color: aliceblue;
+    height: 500px;
+    width: 650px;
+}
+
+.container {
+    margin: 20px;
+}
+
+.container__input {
+    width: 100%;
+}
