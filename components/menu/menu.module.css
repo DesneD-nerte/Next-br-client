@@ -1,7 +1,7 @@
 .menuHeader {
     position: fixed;
     width: 100%;
-    background-image: linear-gradient(180deg, #585858, transparent);
+    background-image: linear-gradient(180deg, #2c2c2c, transparent);
     z-index: 100;
 }
 

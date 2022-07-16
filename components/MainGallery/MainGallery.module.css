@@ -1,0 +1,26 @@
+.mainComponent {
+    position: relative;
+}
+
+.button {
+    margin-right: 15px;
+    margin-left: 15px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button :hover {
+    /* background-color: lightgray; */
+}
+
+.buttonLeft {
+    position: absolute;
+    top: 50%; 
+}
+
+.buttonRight {
+    position: absolute;
+    top: 50%; 
+    right: 0%
+}
