@@ -3,6 +3,7 @@ import Footer from "../footer/Footer";
 import Menu from "../menu/Menu";
 import siteMap from "../../pages/site-map";
 import { routeProperties } from "../../types/routeProperties";
+import MainGallery from "../MainGallery/MainGallery";
 
 // type routeProperties = {
 //     name: string;
@@ -12,9 +13,10 @@ import { routeProperties } from "../../types/routeProperties";
 const Layout = React.memo(({ children }: React.PropsWithChildren) => {
     return (
         <>
-            <Menu routes={siteMap}></Menu>
+            <Menu routes={siteMap} />
+            <MainGallery></MainGallery>
             {children}
-            <Footer></Footer>
+            <Footer />
         </>
     );
 });

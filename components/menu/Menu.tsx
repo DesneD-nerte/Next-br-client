@@ -36,9 +36,13 @@ function Menu({ routes }: menuRoutesProps) {
                         </Link>
 
                         <div className={styles.menuMain_right}>
-                            <button>Sign In</button>
+                            <Link href={"./signIn"}>
+                                <a>Sign In</a>
+                            </Link>
 
-                            <button>Bag</button>
+                            <Link href={"./bag"}>
+                                <a>Bag</a>
+                            </Link>
 
                             <button>Search</button>
                         </div>
