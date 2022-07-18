@@ -18,7 +18,9 @@ function MenuExpanded({ routes }: menuRoutesProps) {
                 <div className={styles.menuContainer}>
                     <div className={styles.menuMain}>
                         <div className={styles.menuMain__left}>
-                            <button className="">Novosibirsk</button>
+                            <button className={styles.menuMain__button}>
+                                Novosibirsk
+                            </button>
                         </div>
 
                         <Link href="/">
@@ -33,11 +35,11 @@ function MenuExpanded({ routes }: menuRoutesProps) {
 
                         <div className={styles.menuMain__right}>
                             <Link href={"./signIn"}>
-                                <a className={styles.menuMain__right_button}>Sign In</a>
+                                <a className={styles.menuMain__button}>Sign In</a>
                             </Link>
 
                             <Link href={"./bag"}>
-                                <a className={styles.menuMain__right_button}>Bag</a>
+                                <a className={styles.menuMain__button}>Bag</a>
                             </Link>
 
                             <div

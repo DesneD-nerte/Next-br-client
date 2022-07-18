@@ -1,7 +1,17 @@
 .containerImage {
-    position: relative;
-    height: 50vh;
-    z-index: -1 
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.disabledContainer {
+    /* display: none; */
+    opacity: 0;
 }
 
 .content {

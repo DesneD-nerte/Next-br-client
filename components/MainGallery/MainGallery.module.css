@@ -1,5 +1,6 @@
 .mainComponent {
     position: relative;
+    height: 50vh;
 }
 
 .button {

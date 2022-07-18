@@ -1,15 +1,40 @@
 import Image from "next/image";
-import { relative } from "path";
-import React from "react";
+import React, { useState } from "react";
 import ImageGallery from "./components/ImageGallery";
 import styles from "./MainGallery.module.css";
 
+const data = [
+    {
+        url: "/Hero.avif",
+        name: "Collection",
+        description: "Some Descr",
+    },
+    {
+        url: "/Trap.png",
+        name: "New name",
+        description: "Go to the shop",
+    },
+];
+
 function MainGallery() {
+    const [currentData, setCurrentData] = useState(data[0]);
+    const [indexData, setIndexData] = useState(0);
+
+    const handleForward = () => {
+        // setCurrentData(data[1]);
+        setIndexData(indexData + 1);
+    };
+
+    const handleBack = () => {
+        setIndexData(indexData - 1);
+        // setCurrentData(data[0]);
+    };
+
     return (
         <div className={styles.mainComponent}>
             <button
                 className={`${styles.button} ${styles.buttonLeft}`}
-                onClick={(e) => console.log(123)}
+                onClick={handleBack}
             >
                 <svg
                     stroke="white"
@@ -22,10 +47,21 @@ function MainGallery() {
                     <path d="M5 40 L30 70" />
                 </svg>
             </button>
-            <ImageGallery></ImageGallery>
+            {data.map((oneData, index) => {
+                return (
+                    <ImageGallery
+                        url={oneData.url}
+                        name={oneData.name}
+                        description={oneData.description}
+                        myIndex={index}
+                        currentIndex={indexData}
+                        count={data.length}
+                    />
+                );
+            })}
             <button
                 className={`${styles.button} ${styles.buttonRight}`}
-                onClick={(e) => console.log(123)}
+                onClick={handleForward}
             >
                 <div>
                     <svg

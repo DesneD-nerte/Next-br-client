@@ -56,12 +56,12 @@
     margin-right: 20px;
 }
 
-.menuMain__right_button {
+.menuMain__button {
     color: rgb(230, 230, 230);
     margin-right: 20px;
 }
 
-.menuMain__right_button:hover {
+.menuMain__button:hover {
     color: white
 }
 
