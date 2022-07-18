@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./menu.module.css";
+import styles from "./menuExpanded.module.css";
 import { routeProperties } from "../../types/routeProperties";
 import { Routes } from "./components/Routes";
 import SearchIcon from "./svg/icon-search.svg";
@@ -11,13 +11,13 @@ type menuRoutesProps = {
     routes: Array<routeProperties>;
 };
 
-function Menu({ routes }: menuRoutesProps) {
+function MenuExpanded({ routes }: menuRoutesProps) {
     return (
         <header className={styles.menuHeader}>
             <nav className={styles.menuNav}>
                 <div className={styles.menuContainer}>
                     <div className={styles.menuMain}>
-                        <div className={styles.menuMain_left}>
+                        <div className={styles.menuMain__left}>
                             <button className="">Novosibirsk</button>
                         </div>
 
@@ -31,13 +31,13 @@ function Menu({ routes }: menuRoutesProps) {
                             </a>
                         </Link>
 
-                        <div className={styles.menuMain_right}>
+                        <div className={styles.menuMain__right}>
                             <Link href={"./signIn"}>
-                                <a>Sign In</a>
+                                <a className={styles.menuMain__right_button}>Sign In</a>
                             </Link>
 
                             <Link href={"./bag"}>
-                                <a>Bag</a>
+                                <a className={styles.menuMain__right_button}>Bag</a>
                             </Link>
 
                             <div
@@ -56,4 +56,4 @@ function Menu({ routes }: menuRoutesProps) {
     );
 }
 
-export default Menu;
+export default MenuExpanded;

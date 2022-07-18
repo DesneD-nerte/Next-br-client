@@ -1,0 +1,24 @@
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IItem } from "../../models/IITem";
+
+interface MenuState {
+    expanded: boolean
+}
+
+const initialState: MenuState = {
+    expanded: true,
+}
+
+export const menuSlice = createSlice({
+    name: 'menu',
+    initialState,
+    reducers: {
+        setExpand: (state, action: PayloadAction<boolean>) => {
+            state.expanded = action.payload;
+        }
+    }
+})
+
+export const { setExpand } = menuSlice.actions;
+
+export default menuSlice.reducer;
