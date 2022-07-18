@@ -5,11 +5,7 @@ import Image from "next/image";
 import styles from "./menu.module.css";
 import { routeProperties } from "../../types/routeProperties";
 import { Routes } from "./components/Routes";
-
-// type routeProperties = {
-//     name: string;
-//     path: string;
-// };
+import SearchIcon from "./svg/icon-search.svg";
 
 type menuRoutesProps = {
     routes: Array<routeProperties>;
@@ -44,7 +40,12 @@ function Menu({ routes }: menuRoutesProps) {
                                 <a>Bag</a>
                             </Link>
 
-                            <button>Search</button>
+                            <div
+                                className={styles.iconCircle}
+                                onClick={(e) => console.log(123)}
+                            >
+                                <SearchIcon className={styles.iconSearch} />
+                            </div>
                         </div>
                     </div>
 

@@ -3,8 +3,6 @@ import { relative } from "path";
 import React from "react";
 import ImageGallery from "./components/ImageGallery";
 import styles from "./MainGallery.module.css";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { IconButton } from "@mui/material";
 
 function MainGallery() {
     return (

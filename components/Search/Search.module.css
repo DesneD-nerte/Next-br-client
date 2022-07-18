@@ -10,4 +10,10 @@
 
 .container__input {
     width: 100%;
+    border: 0;
+    background: none;
+}
+
+.container__input:focus {
+    outline: none;
 }

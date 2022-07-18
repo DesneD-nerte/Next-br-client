@@ -45,15 +45,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 15px;
 }
 
 .menuLinks {
     display: flex;
     justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .onePath {
     display: inline-block;
+    margin-inline: 15px;
 }
 
 
@@ -93,3 +97,20 @@
 /* .onePath__navLink:nth-last-child(1) {
     border-top: 1px solid #ebebeb;;
 } */
+
+.iconCircle {
+    display: inline-block;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 2px solid #BBBBBB;
+}
+
+.iconCircle:hover .iconSearch{
+    fill: rgb(238, 238, 238);
+}
+
+.iconCircle:hover {
+    border-color: rgb(238, 238, 238);
+}

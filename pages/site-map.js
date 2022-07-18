@@ -39,7 +39,7 @@
 
 const siteMap = [
     {
-        name: "Women",
+        name: "WOMEN",
         path: "./women",
         children: [
             {
@@ -53,24 +53,24 @@ const siteMap = [
         ]
     },
     {
-        name: "Факультеты",
-        path: "./faculties"
+        name: "MEN",
+        path: "./men"
     },
     {
-        name: "Аспирантура",
-        path: "./graduate-school"
+        name: "CHILDREN",
+        path: "./children"
     },
     {
-        name: "Список абитуриентов",
-        path: "./lists-applicants"
+        name: "HANDBAGS",
+        path: "./handbags"
     },
     {
-        name: "Магистратура",
-        path: "./magistracy"
+        name: "BEAUTY",
+        path: "./beauty"
     },
     {
-        name: "Целевое обучение",
-        path: "./targeted-training"
+        name: "GIFTS",
+        path: "./gifts"
     }
 ]
 
