@@ -16,11 +16,15 @@ function MenuExpanded({ routes }: menuRoutesProps) {
     const { expanded } = useAppSelector((state) => state.menu);
 
     return (
-        <header
-            className={expanded ? styles.menuHeader_Expanded : styles.menuHeader_Hidden}
-        >
+        <header className={styles.menuHeader} onMouseLeave={() => console.log("qwe")}>
             <nav className={styles.menuNav}>
-                <div className={styles.menuContainer}>
+                <div
+                    className={
+                        expanded
+                            ? styles.menuContainer_Expanded
+                            : styles.menuContainer_Hidden
+                    }
+                >
                     <div className={styles.menuMain}>
                         <div className={styles.menuMain__left}>
                             <button className={styles.menuMain__button}>

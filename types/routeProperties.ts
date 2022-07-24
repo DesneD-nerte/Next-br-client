@@ -1,4 +1,4 @@
-type childRoutes = {
+export type childRoutes = {
     name: string;
     path: string;
 }
@@ -6,5 +6,5 @@ type childRoutes = {
 export type routeProperties = {
     name: string;
     path: string;
-    children: childRoutes[];
+    children: childRoutes[][];
 };

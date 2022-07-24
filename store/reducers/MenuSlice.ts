@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IItem } from "../../models/IITem";
 
 interface MenuState {
-    expanded: boolean
+    expanded: boolean;
 }
 
 const initialState: MenuState = {
