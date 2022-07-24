@@ -16,7 +16,7 @@ function MenuExpanded({ routes }: menuRoutesProps) {
     const { expanded } = useAppSelector((state) => state.menu);
 
     return (
-        <header className={styles.menuHeader} onMouseLeave={() => console.log("qwe")}>
+        <header className={styles.menuHeader}>
             <nav className={styles.menuNav}>
                 <div
                     className={

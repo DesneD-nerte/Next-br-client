@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { routeProperties } from "../../../types/routeProperties";
 import styles from "./Routes.module.css";
 import SubMenu from "./SubMenu";
@@ -16,6 +16,7 @@ function MenuItems({ oneMenuRoute }: menuItemsProps) {
             className={styles.onePath}
             key={oneMenuRoute.path}
             onMouseEnter={() => setDropDown(true)}
+            onMouseLeave={() => setDropDown(false)}
         >
             <Link href={oneMenuRoute.path}>
                 <a className={`${styles.onePath__navLink} ${styles.a}`}>
@@ -23,11 +24,7 @@ function MenuItems({ oneMenuRoute }: menuItemsProps) {
                 </a>
             </Link>
 
-            <SubMenu
-                childRoutes={oneMenuRoute.children}
-                dropDown={dropDown}
-                setDropDown={setDropDown}
-            ></SubMenu>
+            <SubMenu childRoutes={oneMenuRoute.children} dropDown={dropDown}></SubMenu>
         </li>
     );
 }

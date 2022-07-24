@@ -6,10 +6,9 @@ import styles from "./SubMenu.module.css";
 type subMenuProps = {
     childRoutes: childRoutes[][];
     dropDown: boolean;
-    setDropDown: Dispatch<SetStateAction<boolean>>;
 };
 
-function SubMenu({ childRoutes, dropDown, setDropDown }: subMenuProps) {
+function SubMenu({ childRoutes, dropDown }: subMenuProps) {
     return (
         <div
             className={`${styles.subMenuContainer} ${
@@ -17,23 +16,27 @@ function SubMenu({ childRoutes, dropDown, setDropDown }: subMenuProps) {
                     ? styles.subMenuContainer_Active
                     : styles.subMenuContainer_Hidden
             }`}
-            onMouseLeave={() => setDropDown(false)}
         >
-            {childRoutes.map((oneColumn) => {
-                return (
-                    <ul className={styles.onePath__navList}>
-                        {oneColumn.map((oneColumnRoute) => {
-                            return (
-                                <li className={styles.onePath} key={oneColumnRoute.path}>
-                                    <Link href={oneColumnRoute.path}>
-                                        <a>{oneColumnRoute.name}</a>
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                );
-            })}
+            <div className={styles.subMenuBackGround}>
+                {childRoutes.map((oneColumn) => {
+                    return (
+                        <ul className={styles.onePath__navList}>
+                            {oneColumn.map((oneColumnRoute) => {
+                                return (
+                                    <li
+                                        className={styles.onePath}
+                                        key={oneColumnRoute.path}
+                                    >
+                                        <Link href={oneColumnRoute.path}>
+                                            <a>{oneColumnRoute.name}</a>
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    );
+                })}
+            </div>
         </div>
     );
 }
