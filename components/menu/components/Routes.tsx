@@ -1,5 +1,5 @@
 import { routeProperties } from "../../../types/routeProperties";
-import styles from "../menuExpanded.module.css";
+import styles from "../Menu.module.css";
 import Link from "next/link";
 
 type menuRoutesProps = {

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../footer/Footer";
-import MenuExpanded from "../menu/MenuExpanded";
 import siteMap from "../../pages/site-map";
 import MainGallery from "../MainGallery/MainGallery";
 import { useAppSelector } from "../../store/hooks";
-import MenuHidden from "../menu/MenuHidden";
+import Menu from "../menu/Menu";
 
 // type routeProperties = {
 //     name: string;
@@ -16,11 +15,7 @@ const Layout = React.memo(({ children }: React.PropsWithChildren) => {
 
     return (
         <>
-            {expanded ? (
-                <MenuExpanded routes={siteMap} />
-            ) : (
-                <MenuHidden routes={siteMap}></MenuHidden>
-            )}
+            <Menu routes={siteMap} />
             <MainGallery></MainGallery>
             {children}
             <Footer />

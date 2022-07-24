@@ -2,18 +2,23 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./menuHidden.module.css";
+import styles from "./Menu.module.css";
 import { routeProperties } from "../../types/routeProperties";
 import { Routes } from "./components/Routes";
 import SearchIcon from "./svg/icon-search.svg";
+import { useAppSelector } from "../../store/hooks";
 
 type menuRoutesProps = {
     routes: Array<routeProperties>;
 };
 
-function MenuHidden({ routes }: menuRoutesProps) {
+function MenuExpanded({ routes }: menuRoutesProps) {
+    const { expanded } = useAppSelector((state) => state.menu);
+
     return (
-        <header className={styles.menuHeader}>
+        <header
+            className={expanded ? styles.menuHeader_Expanded : styles.menuHeader_Hidden}
+        >
             <nav className={styles.menuNav}>
                 <div className={styles.menuContainer}>
                     <div className={styles.menuMain}>
@@ -58,4 +63,4 @@ function MenuHidden({ routes }: menuRoutesProps) {
     );
 }
 
-export default MenuHidden;
+export default MenuExpanded;
