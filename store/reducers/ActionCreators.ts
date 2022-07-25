@@ -9,8 +9,8 @@ export const fetchItems = (searchValue: string) => async (dispatch: AppDispatch)
         dispatch(setSearch(searchValue));
         dispatch(setVisible(true));
 
-        const response = await axios.get<IItem[]>("http://localhost:5000/items")
-
+        const response = await axios.get<IItem[]>("http://localhost:5000/items", {params: {search: searchValue}});
+        console.log(response.data);
         dispatch(itemsFetching(response.data));
     } catch(e) {
         throw new ApiError(500, "Server didn't responde");

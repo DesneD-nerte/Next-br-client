@@ -1,13 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true
-}
-
-// module.exports = nextConfig
 
 module.exports = {
-  webpack(nextConfig) {
+  webpack: (nextConfig) => {
     nextConfig.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
@@ -15,5 +9,11 @@ module.exports = {
     })
 
     return nextConfig;
+  },
+  
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    domains: ["localhost"]
   }
 };

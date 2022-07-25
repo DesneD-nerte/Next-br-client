@@ -22,11 +22,19 @@ function MainGallery() {
 
     const handleForward = () => {
         // setCurrentData(data[1]);
-        setIndexData(indexData + 1);
+        if (indexData >= data.length - 1) {
+            setIndexData(0);
+        } else {
+            setIndexData(indexData + 1);
+        }
     };
 
     const handleBack = () => {
-        setIndexData(indexData - 1);
+        if (indexData <= 0) {
+            setIndexData(data.length - 1);
+        } else {
+            setIndexData(indexData - 1);
+        }
         // setCurrentData(data[0]);
     };
 

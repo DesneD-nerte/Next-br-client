@@ -33,14 +33,16 @@ export const Search: FC<any> = () => {
     return (
         <form className={styles.form}>
             <div className={styles.container}>
-                <input
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    onFocus={handleVisible}
-                    onKeyDown={(e) => handleEnter(e)}
-                    className={styles.container__input}
-                    placeholder="What are you looking for?"
-                ></input>
+                <div className={styles.container__input_wrapper}>
+                    <input
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        onFocus={handleVisible}
+                        onKeyDown={(e) => handleEnter(e)}
+                        className={styles.container__input}
+                        placeholder="What are you looking for?"
+                    ></input>
+                </div>
                 <SearchList />
             </div>
         </form>

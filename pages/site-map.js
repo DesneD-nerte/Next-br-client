@@ -106,6 +106,40 @@ const siteMap = [
             ]
         ]
     },
+    {
+        name: "CHILDREN",
+        path: "./children",
+        children: [
+            [
+                {
+                    name: "123123",
+                    path: "./women/shoes"
+                },
+                {
+                    name: "12413",
+                    path: "./women/slides",
+                },
+                {
+                    name: "54745",
+                    path: "./women/sandals",
+                }
+            ],
+            [
+                {
+                    name: "4574",
+                    path: "./women/dress"
+                },
+                {
+                    name: "5464 345 353",
+                    path: "./women/bubble",
+                },
+                {
+                    name: "6445 456 54",
+                    path: "./women/kimono",
+                }
+            ]
+        ]
+    },
     // {
     //     name: "CHILDREN",
     //     path: "./children"
