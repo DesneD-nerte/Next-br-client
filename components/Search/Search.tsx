@@ -10,6 +10,8 @@ import { useRouter } from "next/router";
 export const Search: FC<any> = () => {
     const router = useRouter();
 
+    const { visible } = useAppSelector((state) => state.search);
+
     const [search, setSearch] = useState("");
     const debounced = useDebounce(search);
 
@@ -20,7 +22,7 @@ export const Search: FC<any> = () => {
     }, [debounced]);
 
     function handleVisible() {
-        dispatch(setVisible(true));
+        dispatch(setVisible(!visible));
     }
 
     function handleEnter(e) {
@@ -31,20 +33,25 @@ export const Search: FC<any> = () => {
     }
 
     return (
-        <form className={styles.form}>
-            <div className={styles.container}>
-                <div className={styles.container__input_wrapper}>
-                    <input
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        onFocus={handleVisible}
-                        onKeyDown={(e) => handleEnter(e)}
-                        className={styles.container__input}
-                        placeholder="What are you looking for?"
-                    ></input>
-                </div>
-                <SearchList />
+        <>
+            <div className={styles.wrapperSearch} onMouseUp={handleVisible}></div>
+
+            <div className={styles.formPosition}>
+                <form className={styles.form}>
+                    <div className={styles.container}>
+                        <div className={styles.container__input_wrapper}>
+                            <input
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                onKeyDown={(e) => handleEnter(e)}
+                                className={styles.container__input}
+                                placeholder="What are you looking for?"
+                            ></input>
+                        </div>
+                        <SearchList />
+                    </div>
+                </form>
             </div>
-        </form>
+        </>
     );
 };

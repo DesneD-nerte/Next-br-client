@@ -1,12 +1,13 @@
 import React from "react";
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Menu.module.css";
 import { routeProperties } from "../../types/routeProperties";
 import { Routes } from "./components/Routes";
 import SearchIcon from "./svg/icon-search.svg";
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { Search } from "../Search/Search";
+import { setVisible } from "../../store/reducers/SearchSlice";
 
 type menuRoutesProps = {
     routes: Array<routeProperties>;
@@ -14,6 +15,13 @@ type menuRoutesProps = {
 
 function MenuExpanded({ routes }: menuRoutesProps) {
     const { expanded } = useAppSelector((state) => state.menu);
+    const { visible } = useAppSelector((state) => state.search);
+
+    const dispatch = useAppDispatch();
+
+    const handleSearch = () => {
+        dispatch(setVisible(!visible));
+    };
 
     return (
         <header className={styles.menuHeader}>
@@ -51,10 +59,7 @@ function MenuExpanded({ routes }: menuRoutesProps) {
                                 <a className={styles.menuMain__button}>Bag</a>
                             </Link>
 
-                            <div
-                                className={styles.iconCircle}
-                                onClick={(e) => console.log(123)}
-                            >
+                            <div className={styles.iconCircle} onClick={handleSearch}>
                                 <SearchIcon className={styles.iconSearch} />
                             </div>
                         </div>
@@ -63,6 +68,8 @@ function MenuExpanded({ routes }: menuRoutesProps) {
                     <Routes routes={routes} />
                 </div>
             </nav>
+
+            {visible && <Search></Search>}
         </header>
     );
 }

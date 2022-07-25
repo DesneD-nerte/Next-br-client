@@ -1,12 +1,24 @@
 .searchedContainer {
     display: flex;
     justify-content: space-around;
+    padding-top: 25px;
+    height: 100%;
 }
 
 .sectionContainer__Left {
     flex: 1;
 }
 
+.separator {
+    border: 1px;
+    border-style: solid;
+    border-color: lightgray;
+    margin: 0px 10px 0px 10px;
+}
+
 .sectionContainer__Right {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     flex: 2;
 }

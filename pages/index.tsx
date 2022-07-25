@@ -2,10 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback, useEffect } from "react";
 import Layout from "../components/layout/layout";
-import { Search } from "../components/Search/Search";
 import { useAppDispatch } from "../store/hooks";
 import { setExpand } from "../store/reducers/MenuSlice";
 import styles from "../styles/Home.module.css";
+import Search from "./search";
 
 const Home: NextPage = () => {
     const dispatch = useAppDispatch();
@@ -37,10 +37,7 @@ const Home: NextPage = () => {
 
             <Layout>
                 <div className={styles.container}>
-                    <main className={styles.main}>
-                        <Search></Search>
-                        {/* <Search></Search> */}
-                    </main>
+                    <main className={styles.main}></main>
                     {/* <footer className={styles.footer}></footer> */}
                 </div>
             </Layout>
