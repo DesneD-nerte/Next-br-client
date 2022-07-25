@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { useCallback, useEffect } from "react";
 import Layout from "../components/layout/layout";
 import { Search } from "../components/Search/Search";
@@ -40,7 +39,7 @@ const Home: NextPage = () => {
                 <div className={styles.container}>
                     <main className={styles.main}>
                         <Search></Search>
-                        <Search></Search>
+                        {/* <Search></Search> */}
                     </main>
                     {/* <footer className={styles.footer}></footer> */}
                 </div>

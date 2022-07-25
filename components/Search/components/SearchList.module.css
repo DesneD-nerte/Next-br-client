@@ -3,6 +3,10 @@
     justify-content: space-around;
 }
 
-.sectionContainer {
+.sectionContainer__Left {
     flex: 1;
+}
+
+.sectionContainer__Right {
+    flex: 2;
 }

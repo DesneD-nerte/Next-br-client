@@ -18,9 +18,9 @@ function SubMenu({ childRoutes, dropDown }: subMenuProps) {
             }`}
         >
             <div className={styles.subMenuBackGround}>
-                {childRoutes.map((oneColumn) => {
+                {childRoutes.map((oneColumn, index) => {
                     return (
-                        <ul className={styles.onePath__navList}>
+                        <ul className={styles.onePath__navList} key={index}>
                             {oneColumn.map((oneColumnRoute) => {
                                 return (
                                     <li

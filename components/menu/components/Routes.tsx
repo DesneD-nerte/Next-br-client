@@ -11,7 +11,12 @@ export const Routes = ({ routes }: menuRoutesProps) => {
         <div className={styles.menuLinks}>
             <ul>
                 {routes.map((oneMenuRoute: routeProperties) => {
-                    return <MenuItems oneMenuRoute={oneMenuRoute}></MenuItems>;
+                    return (
+                        <MenuItems
+                            oneMenuRoute={oneMenuRoute}
+                            key={oneMenuRoute.path}
+                        ></MenuItems>
+                    );
                 })}
             </ul>
         </div>

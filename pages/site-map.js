@@ -79,29 +79,29 @@ const siteMap = [
             [
                 {
                     name: "Что-то",
-                    path: "./women/shoes"
+                    path: "./men/shoes"
                 },
                 {
                     name: "Окей",
-                    path: "./women/slides",
+                    path: "./men/slides",
                 },
                 {
                     name: "Норм",
-                    path: "./women/sandals",
+                    path: "./men/sandals",
                 }
             ],
             [
                 {
                     name: "Поехало",
-                    path: "./women/dress"
+                    path: "./men/dress"
                 },
                 {
                     name: "Вот так",
-                    path: "./women/bubble",
+                    path: "./men/bubble",
                 },
                 {
                     name: "123123 ",
-                    path: "./women/kimono",
+                    path: "./men/kimono",
                 }
             ]
         ]
@@ -113,29 +113,29 @@ const siteMap = [
             [
                 {
                     name: "123123",
-                    path: "./women/shoes"
+                    path: "./children/shoes"
                 },
                 {
                     name: "12413",
-                    path: "./women/slides",
+                    path: "./children/slides",
                 },
                 {
                     name: "54745",
-                    path: "./women/sandals",
+                    path: "./children/sandals",
                 }
             ],
             [
                 {
                     name: "4574",
-                    path: "./women/dress"
+                    path: "./children/dress"
                 },
                 {
                     name: "5464 345 353",
-                    path: "./women/bubble",
+                    path: "./children/bubble",
                 },
                 {
                     name: "6445 456 54",
-                    path: "./women/kimono",
+                    path: "./children/kimono",
                 }
             ]
         ]

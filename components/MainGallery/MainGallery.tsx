@@ -64,6 +64,7 @@ function MainGallery() {
                         myIndex={index}
                         currentIndex={indexData}
                         count={data.length}
+                        key={index}
                     />
                 );
             })}

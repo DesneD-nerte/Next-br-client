@@ -8,14 +8,14 @@ const SearchList: FC<any> = () => {
 
     return (
         <div className={styles.searchedContainer}>
-            <section className={styles.sectionContainer}>
+            <section className={styles.sectionContainer__Left}>123</section>
+            <section className={styles.sectionContainer__Right}>
                 {items.length ? (
                     items.map((item) => <SearchItem key={item.id} item={item} />)
                 ) : (
                     <span>Sorry we couldn't find any items</span>
                 )}
             </section>
-            <section className={styles.sectionContainer}>images</section>
         </div>
     );
 };

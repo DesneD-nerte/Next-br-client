@@ -12,10 +12,7 @@ const SearchItem: FC<SearchItemProps> = (props: SearchItemProps) => {
             {props.item.name}
             <a>
                 <Image
-                    // src={props.item.photos[0].url}
-                    src={
-                        "http://localhost:5000/items/pants/13e09368-a0bf-44e7-aa2e-782c866baa16.jpg"
-                    }
+                    src={process.env.NEXT_PUBLIC_API + props.item.photos[0].url}
                     width={70}
                     height={70}
                     alt="image"
