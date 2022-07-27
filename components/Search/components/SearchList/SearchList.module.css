@@ -1,7 +1,7 @@
 .searchedContainer {
     display: flex;
     justify-content: space-around;
-    padding-top: 25px;
+    margin-top: 40px;
     height: 100%;
 }
 

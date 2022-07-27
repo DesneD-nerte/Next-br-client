@@ -3,7 +3,7 @@ import { useDebounce } from "../../hooks/useDebounce";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchItems } from "../../store/reducers/ActionCreators";
 import { setVisible } from "../../store/reducers/SearchSlice";
-import SearchList from "./components/SearchList";
+import SearchList from "./components/SearchList/SearchList";
 import styles from "./Search.module.css";
 import { useRouter } from "next/router";
 
@@ -18,7 +18,7 @@ export const Search: FC<any> = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(fetchItems(debounced));
+        dispatch(fetchItems(debounced, 9));
     }, [debounced]);
 
     function handleVisible() {

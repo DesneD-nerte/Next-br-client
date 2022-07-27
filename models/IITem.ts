@@ -7,5 +7,6 @@ export interface IItem {
     color: string;
     gender: string;
     available: boolean;
+    url: string;
     photos: IPhoto[];
 }

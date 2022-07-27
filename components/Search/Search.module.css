@@ -16,14 +16,14 @@
 }
 
 .form {
-    background-color: aliceblue;
+    background-color: white;
     height: 100%;
     width: 650px;
 }
 
 .container {
     height: 100%;
-    padding: 20px;
+    padding: 60px 35px 40px 35px;
 }
 
 .container__input_wrapper {
