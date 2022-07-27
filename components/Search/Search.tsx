@@ -6,6 +6,7 @@ import { setVisible } from "../../store/reducers/SearchSlice";
 import SearchList from "./components/SearchList/SearchList";
 import styles from "./Search.module.css";
 import { useRouter } from "next/router";
+import { setExpand } from "../../store/reducers/MenuSlice";
 
 export const Search: FC<any> = () => {
     const router = useRouter();
@@ -23,6 +24,7 @@ export const Search: FC<any> = () => {
 
     function handleVisible() {
         dispatch(setVisible(!visible));
+        dispatch(setExpand(true));
     }
 
     function handleEnter(e) {
