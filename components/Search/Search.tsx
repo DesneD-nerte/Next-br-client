@@ -36,7 +36,7 @@ export const Search: FC<any> = () => {
 
     return (
         <>
-            <div className={styles.wrapperSearch} onMouseUp={handleVisible}></div>
+            <div className={styles.wrapperSearch} onMouseDown={handleVisible}></div>
 
             <div className={styles.formPosition}>
                 <form className={styles.form}>
