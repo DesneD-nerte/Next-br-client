@@ -2,10 +2,24 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback, useEffect } from "react";
 import Layout from "../components/layout/layout";
+import WithGallery from "../components/layout/WithGallery";
+import { IDataGallery } from "../models/IDataGallery";
 import { useAppDispatch } from "../store/hooks";
 import { setExpand } from "../store/reducers/MenuSlice";
 import styles from "../styles/Home.module.css";
-import Search from "./search";
+
+const data: IDataGallery[] = [
+    {
+        url: "/Hero.avif",
+        name: "Collection",
+        description: "Some Descr",
+    },
+    {
+        url: "/Trap.png",
+        name: "New name",
+        description: "Go to the shop",
+    },
+];
 
 const Home: NextPage = () => {
     const dispatch = useAppDispatch();
@@ -36,10 +50,12 @@ const Home: NextPage = () => {
             </Head>
 
             <Layout>
-                <div className={styles.container}>
-                    <main className={styles.main}></main>
-                    {/* <footer className={styles.footer}></footer> */}
-                </div>
+                <WithGallery data={data}>
+                    <div className={styles.container}>
+                        <main className={styles.main}></main>
+                        {/* <footer className={styles.footer}></footer> */}
+                    </div>
+                </WithGallery>
             </Layout>
         </>
     );

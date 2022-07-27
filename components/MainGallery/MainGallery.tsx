@@ -1,27 +1,16 @@
-import Image from "next/image";
 import React, { useState } from "react";
+import { IDataGallery } from "../../models/IDataGallery";
 import ImageGallery from "./components/ImageGallery";
 import styles from "./MainGallery.module.css";
 
-const data = [
-    {
-        url: "/Hero.avif",
-        name: "Collection",
-        description: "Some Descr",
-    },
-    {
-        url: "/Trap.png",
-        name: "New name",
-        description: "Go to the shop",
-    },
-];
+type galleryProps = {
+    data: IDataGallery[];
+};
 
-function MainGallery() {
-    const [currentData, setCurrentData] = useState(data[0]);
+function MainGallery({ data }: galleryProps) {
     const [indexData, setIndexData] = useState(0);
 
     const handleForward = () => {
-        // setCurrentData(data[1]);
         if (indexData >= data.length - 1) {
             setIndexData(0);
         } else {
@@ -35,7 +24,6 @@ function MainGallery() {
         } else {
             setIndexData(indexData - 1);
         }
-        // setCurrentData(data[0]);
     };
 
     return (
