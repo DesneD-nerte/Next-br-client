@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { FC } from "react";
 import { IItem } from "../../../../models/IITem";
 import { useAppDispatch } from "../../../../store/hooks";
+import { setExpand } from "../../../../store/reducers/MenuSlice";
 import { setVisible } from "../../../../store/reducers/SearchSlice";
 import styles from "./SearchItem.module.css";
 
@@ -14,6 +15,7 @@ const SearchItemImage: FC<SearchItemProps> = (props: SearchItemProps) => {
     const dispatch = useAppDispatch();
 
     const handleCloseSearch = () => {
+        dispatch(setExpand(true));
         dispatch(setVisible(false));
     };
 

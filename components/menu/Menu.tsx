@@ -21,8 +21,16 @@ function MenuExpanded({ routes }: menuRoutesProps) {
     const dispatch = useAppDispatch();
 
     const handleSearch = () => {
-        dispatch(setVisible(!visible));
-        dispatch(setExpand(!expanded));
+        if (visible) {
+            const { pageYOffset } = window;
+            if (pageYOffset === 0) {
+                dispatch(setExpand(true));
+            }
+            dispatch(setVisible(false));
+        } else {
+            dispatch(setVisible(true));
+            dispatch(setExpand(false));
+        }
     };
 
     return (

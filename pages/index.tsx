@@ -22,25 +22,6 @@ const data: IDataGallery[] = [
 ];
 
 const Home: NextPage = () => {
-    const dispatch = useAppDispatch();
-
-    const onScroll = useCallback((event: any) => {
-        const { pageYOffset } = window;
-        if (pageYOffset === 0) {
-            dispatch(setExpand(true));
-        } else {
-            dispatch(setExpand(false));
-        }
-    }, []);
-
-    useEffect(() => {
-        window.addEventListener("scroll", onScroll, { passive: true });
-
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-        };
-    }, []);
-
     return (
         <>
             <Head>
