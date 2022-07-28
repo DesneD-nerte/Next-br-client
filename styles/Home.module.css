@@ -1,5 +1,5 @@
 .container {
-  padding: 0 2rem;
+  padding: 1rem 1rem;
 }
 
 .main {
@@ -8,8 +8,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  
   height: 75vh;
+  background-color: #eeeeee;
 }
 
 .footer {

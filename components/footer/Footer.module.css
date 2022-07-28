@@ -15,7 +15,6 @@
 
     animation-name: example;
     animation-duration: 1s;
-    /* transition: background-color 0.5s ease-in-out; */
 }
 
 .footerContainer:hover {
@@ -27,4 +26,9 @@
     font-size: 12px;
     color: #a8a8a8;
     margin-top: 20px;
+}
+
+.onePath:nth-child(n):hover {
+    text-decoration: none;
+    color: white;
 }
