@@ -1,7 +1,6 @@
 import { CircularProgress } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
-import MainLayout from "../components/layout/MainLayout";
 import WithGallery from "../components/layout/WithGallery";
 import { IDataGallery } from "../models/IDataGallery";
 import styles from "../styles/Home.module.css";
@@ -30,13 +29,11 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <MainLayout>
-                <WithGallery data={data}>
-                    <main className={styles.main}>
-                        <CircularProgress sx={{ color: "#2c2c2c" }}></CircularProgress>
-                    </main>
-                </WithGallery>
-            </MainLayout>
+            <WithGallery data={data}>
+                <main className={styles.main}>
+                    <CircularProgress sx={{ color: "#2c2c2c" }}></CircularProgress>
+                </main>
+            </WithGallery>
         </>
     );
 };

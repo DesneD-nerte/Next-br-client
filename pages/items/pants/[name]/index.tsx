@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import React from "react";
-import MainLayout from "../../../../components/layout/MainLayout";
 import WithGallery from "../../../../components/layout/WithGallery";
 import { IDataGallery } from "../../../../models/IDataGallery";
 
@@ -24,11 +23,9 @@ function ItemPants() {
 
     const { name } = router.query;
     return (
-        <MainLayout>
-            <WithGallery data={data}>
-                <div>Pants: {name}</div>
-            </WithGallery>
-        </MainLayout>
+        <WithGallery data={data}>
+            <div>Pants: {name}</div>
+        </WithGallery>
     );
 }
 
