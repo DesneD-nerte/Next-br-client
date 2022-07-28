@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../../components/layout/layout";
+import MainLayout from "../../components/layout/MainLayout";
 
 function index() {
     return (
-        <Layout>
+        <MainLayout>
             <div>
                 <main>Hello</main>
                 {/* <footer className={styles.footer}></footer> */}
             </div>
-        </Layout>
+        </MainLayout>
     );
 }
 

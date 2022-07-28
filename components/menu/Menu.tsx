@@ -8,7 +8,7 @@ import SearchIcon from "./svg/icon-search.svg";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Search } from "../Search/Search";
 import { setVisible } from "../../store/reducers/SearchSlice";
-import { setExpand } from "../../store/reducers/MenuSlice";
+import { setExpandMenu } from "../../store/reducers/MenuSlice";
 
 type menuRoutesProps = {
     routes: Array<routeProperties>;
@@ -24,12 +24,12 @@ function MenuExpanded({ routes }: menuRoutesProps) {
         if (visible) {
             const { pageYOffset } = window;
             if (pageYOffset === 0) {
-                dispatch(setExpand(true));
+                dispatch(setExpandMenu(true));
             }
             dispatch(setVisible(false));
         } else {
             dispatch(setVisible(true));
-            dispatch(setExpand(false));
+            dispatch(setExpandMenu(false));
         }
     };
 

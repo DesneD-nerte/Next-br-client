@@ -46,6 +46,7 @@ function MainGallery({ data }: galleryProps) {
             {data.map((oneData, index) => {
                 return (
                     <ImageGallery
+                        urlImage={oneData.urlImage}
                         url={oneData.url}
                         name={oneData.name}
                         description={oneData.description}

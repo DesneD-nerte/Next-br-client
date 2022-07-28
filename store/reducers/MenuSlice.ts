@@ -13,12 +13,12 @@ export const menuSlice = createSlice({
     name: 'menu',
     initialState,
     reducers: {
-        setExpand: (state, action: PayloadAction<boolean>) => {
+        setExpandMenu: (state, action: PayloadAction<boolean>) => {
             state.expanded = action.payload;
         }
     }
 })
 
-export const { setExpand } = menuSlice.actions;
+export const { setExpandMenu } = menuSlice.actions;
 
 export default menuSlice.reducer;

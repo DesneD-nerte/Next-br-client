@@ -5,12 +5,10 @@ import { fetchItems } from "../../store/reducers/ActionCreators";
 import { setVisible } from "../../store/reducers/SearchSlice";
 import SearchList from "./components/SearchList/SearchList";
 import styles from "./Search.module.css";
-import { useRouter } from "next/router";
-import { setExpand } from "../../store/reducers/MenuSlice";
+import router from "next/router";
+import { setExpandMenu } from "../../store/reducers/MenuSlice";
 
 export const Search: FC<any> = () => {
-    const router = useRouter();
-
     const { visible } = useAppSelector((state) => state.search);
 
     const [search, setSearch] = useState("");
@@ -24,12 +22,13 @@ export const Search: FC<any> = () => {
 
     function handleVisible() {
         dispatch(setVisible(!visible));
-        dispatch(setExpand(true));
+        dispatch(setExpandMenu(true));
     }
 
     function handleEnter(e) {
         if (e.key === "Enter") {
             e.preventDefault();
+            dispatch(setVisible(false));
             router.push("/search");
         }
     }

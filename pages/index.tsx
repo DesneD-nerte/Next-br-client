@@ -1,19 +1,21 @@
 import { CircularProgress } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Layout from "../components/layout/layout";
+import MainLayout from "../components/layout/MainLayout";
 import WithGallery from "../components/layout/WithGallery";
 import { IDataGallery } from "../models/IDataGallery";
 import styles from "../styles/Home.module.css";
 
 const data: IDataGallery[] = [
     {
-        url: "/Hero.avif",
+        urlImage: "/Hero.avif",
+        url: "/search",
         name: "Collection",
         description: "Some Descr",
     },
     {
-        url: "/Trap.png",
+        urlImage: "/Trap.png",
+        url: "/search",
         name: "New name",
         description: "Go to the shop",
     },
@@ -28,7 +30,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Layout>
+            <MainLayout>
                 <WithGallery data={data}>
                     <div className={styles.container}>
                         <main className={styles.main}>
@@ -38,7 +40,7 @@ const Home: NextPage = () => {
                         </main>
                     </div>
                 </WithGallery>
-            </Layout>
+            </MainLayout>
         </>
     );
 };

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import { childRoutes } from "../../../types/routeProperties";
 import styles from "./SubMenu.module.css";
 

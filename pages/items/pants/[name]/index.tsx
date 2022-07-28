@@ -1,17 +1,19 @@
 import { useRouter } from "next/router";
 import React from "react";
-import Layout from "../../../../components/layout/layout";
+import MainLayout from "../../../../components/layout/MainLayout";
 import WithGallery from "../../../../components/layout/WithGallery";
 import { IDataGallery } from "../../../../models/IDataGallery";
 
 const data: IDataGallery[] = [
     {
-        url: "/pants.jpg",
+        urlImage: "/pants.jpg",
+        url: "/search",
         name: "Collection",
         description: "Some Descr",
     },
     {
-        url: "/pants1.jpg",
+        urlImage: "/pants1.jpg",
+        url: "/search",
         name: "New name",
         description: "Go to the shop",
     },
@@ -22,11 +24,11 @@ function ItemPants() {
 
     const { name } = router.query;
     return (
-        <Layout>
+        <MainLayout>
             <WithGallery data={data}>
                 <div>Pants: {name}</div>
             </WithGallery>
-        </Layout>
+        </MainLayout>
     );
 }
 

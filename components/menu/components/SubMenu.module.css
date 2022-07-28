@@ -1,4 +1,3 @@
-
 .subMenuContainer {
     position: absolute;
     left: 0;
@@ -27,12 +26,9 @@
     background-color: white;
 }
 
-
 .subMenu__Header {
     font-weight: bold;
 }
-
-
 
 .onePath {
     display: inline-block;
