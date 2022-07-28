@@ -1,0 +1,25 @@
+.controlContainer {
+    height: 75px;
+}
+
+.searchContainer {
+    height: 75px;
+}
+
+.itemsContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 3px
+}
+@media screen and (min-width: 768px) {
+    .itemsContainer{ 
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .itemsContainer{ 
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+
