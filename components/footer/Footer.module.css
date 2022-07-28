@@ -1,0 +1,30 @@
+
+@keyframes example {
+    from { background-color: #111111; }
+    to { background-color: #2c2c2c; }
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2c2c2c;
+    color: white;
+
+    padding-top: 50px;
+    padding-bottom: 75px;
+
+    animation-name: example;
+    animation-duration: 1s;
+    /* transition: background-color 0.5s ease-in-out; */
+}
+
+.footerContainer:hover {
+    background-color: #111111;
+    animation: unset;
+}
+
+.ulFooter {
+    font-size: 12px;
+    color: #a8a8a8;
+    margin-top: 20px;
+}

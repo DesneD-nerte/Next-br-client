@@ -1,11 +1,9 @@
+import { CircularProgress } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useCallback, useEffect } from "react";
 import Layout from "../components/layout/layout";
 import WithGallery from "../components/layout/WithGallery";
 import { IDataGallery } from "../models/IDataGallery";
-import { useAppDispatch } from "../store/hooks";
-import { setExpand } from "../store/reducers/MenuSlice";
 import styles from "../styles/Home.module.css";
 
 const data: IDataGallery[] = [
@@ -33,8 +31,11 @@ const Home: NextPage = () => {
             <Layout>
                 <WithGallery data={data}>
                     <div className={styles.container}>
-                        <main className={styles.main}></main>
-                        {/* <footer className={styles.footer}></footer> */}
+                        <main className={styles.main}>
+                            <CircularProgress
+                                sx={{ color: "#2c2c2c" }}
+                            ></CircularProgress>
+                        </main>
                     </div>
                 </WithGallery>
             </Layout>
