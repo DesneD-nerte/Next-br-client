@@ -4,6 +4,9 @@
 
 .contentContainer {
     background-color: #eeeeee;
+    min-height: 75vh;
+}
+
+.contentContainer_margin {
     margin: 1rem 1rem 1rem 1rem;
-    height: 75vh;
 }

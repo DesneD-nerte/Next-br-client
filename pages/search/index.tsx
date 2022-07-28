@@ -6,7 +6,9 @@ const Search: NextPage = () => {
     return (
         <>
             <MainLayout>
-                <WithoutGallery></WithoutGallery>
+                <WithoutGallery isMargin={false}>
+                    <div></div>
+                </WithoutGallery>
             </MainLayout>
         </>
     );

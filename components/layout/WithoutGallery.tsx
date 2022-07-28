@@ -3,7 +3,14 @@ import { useAppDispatch } from "../../store/hooks";
 import { setExpandMenu } from "../../store/reducers/MenuSlice";
 import styles from "./WithoutGallery.module.css";
 
-const WithoutGallery = React.memo(({ children }: React.PropsWithChildren) => {
+type withoutGalleryProps = {
+    isMargin: boolean;
+    children: JSX.Element;
+};
+
+const WithoutGallery = React.memo(({ isMargin, children }: withoutGalleryProps) => {
+    const marginClass = isMargin === true ? styles.contentContainer_margin : "";
+
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -14,7 +21,7 @@ const WithoutGallery = React.memo(({ children }: React.PropsWithChildren) => {
         <>
             <div className={styles.menuDoll}></div>
 
-            <div className={styles.contentContainer}>{children}</div>
+            <div className={`${styles.contentContainer} ${marginClass}`}>{children}</div>
         </>
     );
 });
