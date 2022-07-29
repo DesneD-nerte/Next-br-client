@@ -23,7 +23,7 @@ const SearchItemImage: FC<SearchItemProps> = (props: SearchItemProps) => {
             className={styles.sectionContainer__Right__Images}
             onClick={handleCloseSearch}
         >
-            <Link href={process.env.NEXT_PUBLIC_HOST + props.item.url}>
+            <Link href={"/" + props.item.url}>
                 <a>
                     <Image
                         src={process.env.NEXT_PUBLIC_API + props.item.photos[0].url}
