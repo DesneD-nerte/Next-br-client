@@ -84,4 +84,4 @@ function MenuExpanded({ routes }: menuRoutesProps) {
     );
 }
 
-export default MenuExpanded;
+export default React.memo(MenuExpanded);

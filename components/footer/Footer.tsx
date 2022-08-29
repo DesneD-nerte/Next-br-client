@@ -1,54 +1,28 @@
-import Link from "next/link";
-import styles from "./Footer.module.css";
+import React from "react";
+import FooterColumn from "./components/footerColumn";
+import styles from "./Footer.module.scss";
 
-export default function Footer() {
+const Footer = () => {
+    const firstLinksColumn = [
+        { name: "FAQs", href: "/faqs" },
+        { name: "Sitemap", href: "/sitemap" },
+    ];
+    const secondLinksColumn = [
+        { name: "BR", href: "/about" },
+        { name: "Privacy & Cookies", href: "/cookies" },
+    ];
+    const thirdLinksColumn = [
+        { name: "Instagram", href: "/" },
+        { name: "Facebook", href: "/" },
+    ];
+
     return (
         <footer className={styles.footerContainer}>
-            <div>
-                <text>NEED HELP?</text>
-                <ul className={styles.ulFooter}>
-                    <li className={styles.onePath}>
-                        <Link href="/faqs">
-                            <a>FAQs</a>
-                        </Link>
-                    </li>
-                    <li className={styles.onePath}>
-                        <Link href="/sitemap">
-                            <a>Sitemap</a>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <text>COMPANY</text>
-                <ul className={styles.ulFooter}>
-                    <li className={styles.onePath}>
-                        <Link href="/about">
-                            <a>About BR</a>
-                        </Link>
-                    </li>
-                    <li className={styles.onePath}>
-                        <Link href="/cookies">
-                            <a>Privacy & Cookies</a>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <text>CONTACT US</text>
-                <ul className={styles.ulFooter}>
-                    <li className={styles.onePath}>
-                        <Link href="/">
-                            <a>Instagram</a>
-                        </Link>
-                    </li>
-                    <li className={styles.onePath}>
-                        <Link href="/">
-                            <a>Facebook</a>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
+            <FooterColumn links={firstLinksColumn} title="NEED HELP?"></FooterColumn>
+            <FooterColumn links={secondLinksColumn} title="COMPANY"></FooterColumn>
+            <FooterColumn links={thirdLinksColumn} title="CONTACT US"></FooterColumn>
         </footer>
     );
-}
+};
+
+export default React.memo(Footer);
