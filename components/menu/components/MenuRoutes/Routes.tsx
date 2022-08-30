@@ -1,12 +1,13 @@
-import { routeProperties } from "../../../types/routeProperties";
+import { routeProperties } from "../../../../types/routeProperties";
 import styles from "./Routes.module.css";
-import MenuItems from "./MenuItems";
+import MenuItems from "./components/MenuItems/MenuItems";
+import React from "react";
 
 type menuRoutesProps = {
     routes: Array<routeProperties>;
 };
 
-export const Routes = ({ routes }: menuRoutesProps) => {
+const Routes = ({ routes }: menuRoutesProps) => {
     return (
         <div className={styles.menuLinks}>
             <ul>
@@ -22,3 +23,5 @@ export const Routes = ({ routes }: menuRoutesProps) => {
         </div>
     );
 };
+
+export default React.memo(Routes);

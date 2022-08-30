@@ -18,6 +18,7 @@ const SearchItemImage: FC<SearchItemProps> = (props: SearchItemProps) => {
         dispatch(setExpandMenu(true));
         dispatch(setVisible(false));
     };
+
     return (
         <div
             className={styles.sectionContainer__Right__Images}

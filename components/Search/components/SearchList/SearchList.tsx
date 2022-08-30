@@ -6,7 +6,7 @@ import styles from "./SearchList.module.css";
 
 const SearchList: FC<any> = React.memo(() => {
     const { searchValue, visible, items } = useAppSelector((state) => state.search);
-
+    console.log("SearchList", items);
     return (
         <div className={styles.searchedContainer}>
             <section className={styles.sectionContainer__Left}>

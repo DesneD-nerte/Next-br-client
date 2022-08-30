@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { routeProperties } from "../../../types/routeProperties";
-import styles from "./Routes.module.css";
-import SubMenu from "./SubMenu";
+import { routeProperties } from "../../../../../../types/routeProperties";
+import styles from "../../Routes.module.css";
+import SubMenu from "./components/SubMenu/SubMenu";
 
 type menuItemsProps = {
     oneMenuRoute: routeProperties;

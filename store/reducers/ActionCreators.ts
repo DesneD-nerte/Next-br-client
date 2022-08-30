@@ -7,7 +7,7 @@ import { itemsFetching, setSearch, setVisible } from "./SearchSlice";
 export const fetchItems = (searchValue: string, limit: number) => async (dispatch: AppDispatch) => {
     try {
         dispatch(setSearch(searchValue));
-        dispatch(setVisible(true));
+        // dispatch(setVisible(true));
 
         const response = await axios.get<IItem[]>("http://localhost:5000/items", {params: {search: searchValue, limit: limit}});
         console.log(response.data);

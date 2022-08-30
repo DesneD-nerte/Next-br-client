@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { childRoutes } from "../../../types/routeProperties";
+import { childRoutes } from "../../../../../../../../types/routeProperties";
 import styles from "./SubMenu.module.css";
 
 type subMenuProps = {
