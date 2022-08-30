@@ -4,24 +4,39 @@ import { routeProperties } from "../../types/routeProperties";
 import Routes from "./components/MenuRoutes/Routes";
 import { useAppSelector } from "../../store/hooks";
 import MenuMain from "./components/MenuMain/MenuMain";
+import routes from "../../pages/site-map";
+import { useDispatch } from "react-redux";
+import { setExpandMenu } from "../../store/reducers/MenuSlice";
 
-type menuRoutesProps = {
-    routes: Array<routeProperties>;
+type menuProps = {
+    // routes: Array<routeProperties>;
+    // isMargin: boolean
+    expandedControl?: boolean;
 };
 
-function Menu({ routes }: menuRoutesProps) {
+// function Menu({ routes }: menuProps) {
+function Menu({ expandedControl }: menuProps) {
     const { expanded } = useAppSelector((state) => state.menu);
+    const dispatch = useDispatch();
+
+    if (expandedControl != undefined && expandedControl != expanded) {
+        dispatch(setExpandMenu(expandedControl));
+    }
 
     return (
-        <header
-            className={
-                expanded ? styles.menuContainer__expanded : styles.menuContainer__hidden
-            }
-        >
-            <MenuMain />
-            <nav>
-                <Routes routes={routes} />
-            </nav>
+        <header className={styles.headerMenu}>
+            <div
+                className={
+                    expanded
+                        ? styles.menuContainer__expanded
+                        : styles.menuContainer__hidden
+                }
+            >
+                <MenuMain />
+                <nav>
+                    <Routes routes={routes} />
+                </nav>
+            </div>
         </header>
     );
 }

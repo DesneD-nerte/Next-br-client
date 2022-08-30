@@ -27,7 +27,7 @@ function MainGallery({ data }: galleryProps) {
     };
 
     return (
-        <div className={styles.mainComponent}>
+        <section className={styles.mainComponent}>
             <button
                 className={`${styles.button} ${styles.buttonLeft}`}
                 onClick={handleBack}
@@ -74,7 +74,7 @@ function MainGallery({ data }: galleryProps) {
                     </svg>
                 </div>
             </button>
-        </div>
+        </section>
     );
 }
 

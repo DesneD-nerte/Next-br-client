@@ -30,9 +30,7 @@ const Home: NextPage = () => {
             </Head>
 
             <WithGallery data={data}>
-                <main className={styles.main}>
-                    <CircularProgress sx={{ color: "#2c2c2c" }}></CircularProgress>
-                </main>
+                <CircularProgress sx={{ color: "#2c2c2c" }}></CircularProgress>
             </WithGallery>
         </>
     );
