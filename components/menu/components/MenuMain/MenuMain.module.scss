@@ -1,0 +1,30 @@
+.menuMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left {
+        margin-left: 20px;
+    }
+
+    &__logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__right {
+        display: flex;
+    align-items: center;
+    margin-right: 20px;
+    }
+
+    &__button {
+        color: rgb(230, 230, 230);
+        margin-right: 20px;
+    }
+
+    &__button:hover {
+        color: white
+    }
+}

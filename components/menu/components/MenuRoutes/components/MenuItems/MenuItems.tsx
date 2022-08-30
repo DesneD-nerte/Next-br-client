@@ -1,7 +1,7 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { routeProperties } from "../../../../../../types/routeProperties";
-import styles from "../../Routes.module.css";
+import styles from "./MenuItems.module.scss";
 import SubMenu from "./components/SubMenu/SubMenu";
 
 type menuItemsProps = {
@@ -19,9 +19,7 @@ function MenuItems({ oneMenuRoute }: menuItemsProps) {
             onMouseLeave={() => setDropDown(false)}
         >
             <Link href={oneMenuRoute.path}>
-                <a className={`${styles.onePath__navLink} ${styles.a}`}>
-                    {oneMenuRoute.name}
-                </a>
+                <a className={styles.onePath__navLink}>{oneMenuRoute.name}</a>
             </Link>
 
             <SubMenu childRoutes={oneMenuRoute.children} dropDown={dropDown}></SubMenu>

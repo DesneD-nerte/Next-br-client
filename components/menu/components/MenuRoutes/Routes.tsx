@@ -1,5 +1,5 @@
 import { routeProperties } from "../../../../types/routeProperties";
-import styles from "./Routes.module.css";
+import styles from "./Routes.module.scss";
 import MenuItems from "./components/MenuItems/MenuItems";
 import React from "react";
 

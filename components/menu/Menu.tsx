@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Menu.module.css";
+import styles from "./Menu.module.scss";
 import { routeProperties } from "../../types/routeProperties";
 import Routes from "./components/MenuRoutes/Routes";
 import { useAppSelector } from "../../store/hooks";
@@ -9,13 +9,13 @@ type menuRoutesProps = {
     routes: Array<routeProperties>;
 };
 
-function MenuExpanded({ routes }: menuRoutesProps) {
+function Menu({ routes }: menuRoutesProps) {
     const { expanded } = useAppSelector((state) => state.menu);
 
     return (
         <header
             className={
-                expanded ? styles.menuContainer_Expanded : styles.menuContainer_Hidden
+                expanded ? styles.menuContainer__expanded : styles.menuContainer__hidden
             }
         >
             <MenuMain />
@@ -26,4 +26,4 @@ function MenuExpanded({ routes }: menuRoutesProps) {
     );
 }
 
-export default React.memo(MenuExpanded);
+export default React.memo(Menu);
