@@ -1,7 +1,7 @@
-import { routeProperties } from "../../../../types/routeProperties";
-import styles from "./Routes.module.scss";
-import MenuItems from "./components/MenuItems/MenuItems";
+import { routeProperties } from "../../../../utils/types/routeProperties";
+import MenuItems from "./MenuItems";
 import React from "react";
+import { MenuLinks } from "../../../../utils/elements/Menu";
 
 type menuRoutesProps = {
     routes: Array<routeProperties>;
@@ -9,7 +9,7 @@ type menuRoutesProps = {
 
 const Routes = ({ routes }: menuRoutesProps) => {
     return (
-        <div className={styles.menuLinks}>
+        <MenuLinks>
             <ul>
                 {routes.map((oneMenuRoute: routeProperties) => {
                     return (
@@ -20,7 +20,7 @@ const Routes = ({ routes }: menuRoutesProps) => {
                     );
                 })}
             </ul>
-        </div>
+        </MenuLinks>
     );
 };
 
