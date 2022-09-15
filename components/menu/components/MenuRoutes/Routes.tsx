@@ -1,6 +1,6 @@
 import { routeProperties } from "../../../../types/routeProperties";
 import styles from "./Routes.module.scss";
-import MenuItems from "./components/MenuItems/MenuItems";
+import MenuItems from "./MenuItems/MenuItems";
 import React from "react";
 
 type menuRoutesProps = {

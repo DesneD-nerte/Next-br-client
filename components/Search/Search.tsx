@@ -8,7 +8,7 @@ import styles from "./Search.module.css";
 import router from "next/router";
 import { setExpandMenu } from "../../store/reducers/MenuSlice";
 
-export const Search: FC<any> = () => {
+export const Search: FC = () => {
     const { visible } = useAppSelector((state) => state.search);
 
     const [search, setSearch] = useState("");
@@ -35,7 +35,10 @@ export const Search: FC<any> = () => {
 
     return (
         <>
-            <div className={styles.wrapperSearch} onMouseDown={handleVisible}></div>
+            <div
+                className={styles.wrapperSearch}
+                onMouseDown={handleVisible}
+            ></div>
 
             <div className={styles.formPosition}>
                 <form className={styles.form}>

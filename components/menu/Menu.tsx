@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Menu.module.scss";
-import { routeProperties } from "../../types/routeProperties";
 import Routes from "./components/MenuRoutes/Routes";
 import { useAppSelector } from "../../store/hooks";
 import MenuMain from "./components/MenuMain/MenuMain";

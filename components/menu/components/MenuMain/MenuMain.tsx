@@ -2,9 +2,9 @@ import Link from "next/link";
 import React from "react";
 import styles from "./MenuMain.module.scss";
 import Image from "next/image";
-import MenuSearch from "./components/MenuSearch";
+import MenuSearch from "./MenuSearch/MenuSearch";
 
-const MenuMain = (props: any) => {
+const MenuMain = () => {
     return (
         <div className={styles.menuMain}>
             <div className={styles.menuMain__left}>
@@ -13,7 +13,12 @@ const MenuMain = (props: any) => {
 
             <Link href="/">
                 <a className={styles.menuMain__logo}>
-                    <Image src="/brandImage.png" width={170} height={30}></Image>
+                    <Image
+                        src="/brandImage.png"
+                        width={170}
+                        height={30}
+                        alt="brand image"
+                    ></Image>
                 </a>
             </Link>
 

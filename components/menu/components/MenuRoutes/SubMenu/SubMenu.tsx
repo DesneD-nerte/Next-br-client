@@ -1,7 +1,6 @@
-import Link from "next/link";
 import React from "react";
-import { childRoutes } from "../../../../../../../../types/routeProperties";
-import OneColumn from "./components/OneColumn";
+import { childRoutes } from "../../../../../types/routeProperties";
+import OneColumn from "../OneColumn/OneColumn";
 import styles from "./SubMenu.module.scss";
 
 type subMenuProps = {
@@ -14,11 +13,11 @@ function SubMenu({ childRoutes, dropDown }: subMenuProps) {
         <div
             className={`${
                 dropDown === true
-                    ? styles.subMenuContainer__active
-                    : styles.subMenuContainer__hidden
+                    ? styles.onePath__subMenuContainer_active
+                    : styles.onePath__subMenuContainer_hidden
             }`}
         >
-            <div className={styles.subMenuContainer__content}>
+            <div className={styles.onePath__subMenuContainer_content}>
                 {childRoutes.map((oneColumn, index) => {
                     return <OneColumn oneColumn={oneColumn} key={index} />;
                 })}

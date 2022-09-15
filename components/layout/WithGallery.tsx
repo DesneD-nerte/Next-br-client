@@ -39,7 +39,9 @@ const WithGallery = React.memo(({ data, children }: galleryProps) => {
         <>
             <Menu />
             <MainGallery data={data}></MainGallery>
-            <main className={styles.contentContainer}>{children}</main>
+            <main id="main" className={styles.contentContainer}>
+                {children}
+            </main>
         </>
     );
 });
