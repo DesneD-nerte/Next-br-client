@@ -1,0 +1,35 @@
+@use "/styles/variables" as variables;
+
+.inputContainer {
+    position: relative;
+
+    &__input {
+        display: block;
+        // width: 250px;
+        width: 100%;
+        height: 65px;
+        border: none;
+        padding: 20px 10px 5px 10px;
+        font-size: variables.$fontSize;
+
+        &:focus + .inputContainer__inputLabel {
+            top: 10px;
+            font-size: 12px;
+        }
+    }
+
+    &__inputLabel {
+        position: absolute;
+        top: 22px;
+        cursor: text;
+        padding-left: 10px;
+        text-transform: uppercase;
+
+        transition: top 300ms, font-size 300ms;
+
+        &_fixed {
+            top: 10px;
+            font-size: 12px;
+        }
+    }
+}
