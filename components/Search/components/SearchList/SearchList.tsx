@@ -2,18 +2,20 @@ import React, { FC } from "react";
 import { useAppSelector } from "../../../../store/hooks";
 import SearchItemImage from "../SearchItemImage/SearchItemImage";
 import SearchItemMenu from "../SearchItemMenu/SearchItemMenu";
-import styles from "./SearchList.module.css";
+import styles from "./SearchList.module.scss";
 
 const SearchList: FC = React.memo(() => {
     const { items } = useAppSelector((state) => state.search);
 
     return (
         <div className={styles.searchedContainer}>
-            <section className={styles.sectionContainer__Left}>
+            <section className={styles.searchedContainer__Left}>
                 <SearchItemMenu />
             </section>
-            <div className={styles.separator}></div>
-            <section className={styles.sectionContainer__Right}>
+
+            <div className={styles.searchedContainer__separator}></div>
+
+            <section className={styles.searchedContainer__Right}>
                 {items.length ? (
                     items.map((item) => (
                         <SearchItemImage key={item.id} item={item} />

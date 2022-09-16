@@ -2,44 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
 import { IItem } from "../../../../models/IITem";
-import { useAppDispatch } from "../../../../store/hooks";
-import { setExpandMenu } from "../../../../store/reducers/MenuSlice";
-import { setVisible } from "../../../../store/reducers/SearchSlice";
-import styles from "./SearchItem.module.css";
 
-type SearchItemProps = {
+interface SearchItemProps {
     item: IItem;
-};
+}
 
-const SearchItemImage: FC<SearchItemProps> = (props: SearchItemProps) => {
-    const dispatch = useAppDispatch();
-
-    const handleCloseSearch = () => {
-        dispatch(setExpandMenu(true));
-        dispatch(setVisible(false));
-    };
-
+const SearchItemImage: FC<SearchItemProps> = ({ item }: SearchItemProps) => {
     return (
-        <div
-            className={styles.sectionContainer__Right__Images}
-            onClick={handleCloseSearch}
-        >
-            <Link href={"/" + props.item.url}>
-                <a>
-                    <Image
-                        src={
-                            process.env.NEXT_PUBLIC_API +
-                            props.item.photos[0].url
-                        }
-                        width={120}
-                        height={120}
-                        alt="image"
-                        layout="fixed"
-                        // objectFit="contain"
-                    ></Image>
-                </a>
-            </Link>
-        </div>
+        <Link href={"/" + item.url}>
+            <a>
+                <Image
+                    src={process.env.NEXT_PUBLIC_API + item.photos[0].url}
+                    width={120}
+                    height={120}
+                    alt="image"
+                    layout="fixed"
+                ></Image>
+            </a>
+        </Link>
     );
 };
 
