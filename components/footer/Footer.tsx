@@ -1,5 +1,5 @@
 import React from "react";
-import FooterColumn from "./components/footerColumn";
+import FooterColumn from "./components/FooterColumn";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
@@ -12,15 +12,27 @@ const Footer = () => {
         { name: "Privacy & Cookies", href: "/cookies" },
     ];
     const thirdLinksColumn = [
-        { name: "Instagram", href: "/" },
-        { name: "Facebook", href: "/" },
+        { name: "Instagram", href: "/instagram" },
+        { name: "Facebook", href: "/facebook" },
     ];
 
     return (
         <footer className={styles.footerContainer}>
-            <FooterColumn links={firstLinksColumn} title="NEED HELP?"></FooterColumn>
-            <FooterColumn links={secondLinksColumn} title="COMPANY"></FooterColumn>
-            <FooterColumn links={thirdLinksColumn} title="CONTACT US"></FooterColumn>
+            <FooterColumn
+                links={firstLinksColumn}
+                title="NEED HELP?"
+                key={1}
+            ></FooterColumn>
+            <FooterColumn
+                links={secondLinksColumn}
+                title="COMPANY"
+                key={2}
+            ></FooterColumn>
+            <FooterColumn
+                links={thirdLinksColumn}
+                title="CONTACT US"
+                key={3}
+            ></FooterColumn>
         </footer>
     );
 };

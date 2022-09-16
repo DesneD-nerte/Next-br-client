@@ -20,7 +20,10 @@ const FooterColumn = (props: IFooterColumnProps) => {
             <ul className={styles.ulColumn}>
                 {props.links.map((oneLink) => {
                     return (
-                        <li className={styles.ulColumn__onePath}>
+                        <li
+                            className={styles.ulColumn__onePath}
+                            key={oneLink.href}
+                        >
                             <Link href={oneLink.href}>
                                 <a>{oneLink.name}</a>
                             </Link>

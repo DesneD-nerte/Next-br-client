@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { IDataGallery } from "../../models/IDataGallery";
 import ImageGallery from "./components/ImageGallery";
 import styles from "./MainGallery.module.css";
+import LeftButtonIcon from "./svg/icon-left-gallery.svg";
+import RightButtonIcon from "./svg/icon-right-gallery.svg";
 
 type galleryProps = {
     data: IDataGallery[];
@@ -32,16 +34,7 @@ function MainGallery({ data }: galleryProps) {
                 className={`${styles.button} ${styles.buttonLeft}`}
                 onClick={handleBack}
             >
-                <svg
-                    stroke="white"
-                    width="50px"
-                    height="75px"
-                    strokeWidth="1.5"
-                    fill="none"
-                >
-                    <path d="M5 40 L30 10" />
-                    <path d="M5 40 L30 70" />
-                </svg>
+                <LeftButtonIcon />
             </button>
             {data.map((oneData, index) => {
                 return (
@@ -62,16 +55,7 @@ function MainGallery({ data }: galleryProps) {
                 onClick={handleForward}
             >
                 <div>
-                    <svg
-                        stroke="white"
-                        width="50px"
-                        height="75px"
-                        strokeWidth="1.5"
-                        fill="none"
-                    >
-                        <path d="M45 40 L20 10" />
-                        <path d="M45 40 L20 70" />
-                    </svg>
+                    <RightButtonIcon />
                 </div>
             </button>
         </section>

@@ -5,14 +5,13 @@ import styles from "./OneColumn.module.scss";
 
 interface OneColumnMenuRoutesProps {
     oneColumn: childRoutes[];
-    key: string | number;
 }
 
 const OneColumn = (props: OneColumnMenuRoutesProps) => {
-    const { oneColumn, key } = props;
+    const { oneColumn } = props;
 
     return (
-        <ul className={styles.oneColumn} key={key}>
+        <ul className={styles.oneColumn}>
             {oneColumn.map((oneColumnRoute) => {
                 return (
                     <li

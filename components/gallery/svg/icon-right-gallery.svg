@@ -1,0 +1,10 @@
+ <svg
+    stroke="white"
+    width="50px"
+    height="75px"
+    strokeWidth="1.5"
+    fill="none"
+>
+    <path d="M45 40 L20 10" />
+    <path d="M45 40 L20 70" />
+</svg>
