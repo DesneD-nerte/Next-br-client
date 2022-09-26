@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useEffect } from "react";
 import LoginForm from "../../components/forms/auth/login/LoginForm";
 import MainContent from "../../components/layout/MainContent";
@@ -19,3 +20,12 @@ function SignIn() {
 }
 
 export default SignIn;
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common", "footer"])),
+            // Will be passed to the page component as props
+        },
+    };
+}

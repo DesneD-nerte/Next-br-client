@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import React from "react";
 import styles from "./FooterColumn.module.scss";
@@ -13,6 +14,8 @@ interface IFooterColumnProps {
 }
 
 const FooterColumn = (props: IFooterColumnProps) => {
+    const { t } = useTranslation("footer");
+
     return (
         <div>
             <text>{props.title}</text>
@@ -25,7 +28,8 @@ const FooterColumn = (props: IFooterColumnProps) => {
                             key={oneLink.href}
                         >
                             <Link href={oneLink.href}>
-                                <a>{oneLink.name}</a>
+                                {/* <a>{oneLink.name}</a> */}
+                                <a>{t(`${oneLink.name}`)}</a>
                             </Link>
                         </li>
                     );

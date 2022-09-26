@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import { appWithTranslation } from "next-i18next";
 // import "bootstrap/dist/css/bootstrap.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -21,4 +22,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

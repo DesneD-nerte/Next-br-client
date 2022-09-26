@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import React from "react";
 import { childRoutes } from "../../../../../types/routeProperties";
@@ -10,6 +11,8 @@ interface OneColumnMenuRoutesProps {
 const OneColumn = (props: OneColumnMenuRoutesProps) => {
     const { oneColumn } = props;
 
+    const { t } = useTranslation("menu");
+
     return (
         <ul className={styles.oneColumn}>
             {oneColumn.map((oneColumnRoute) => {
@@ -20,7 +23,7 @@ const OneColumn = (props: OneColumnMenuRoutesProps) => {
                     >
                         <Link href={oneColumnRoute.path}>
                             <a className={styles.oneColumn__button}>
-                                {oneColumnRoute.name}
+                                {t(`${oneColumnRoute.interName}`)}
                             </a>
                         </Link>
                     </li>

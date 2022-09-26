@@ -8,12 +8,9 @@ import { useDispatch } from "react-redux";
 import { setExpandMenu } from "../../store/reducers/MenuSlice";
 
 type menuProps = {
-    // routes: Array<routeProperties>;
-    // isMargin: boolean
     expandedControl?: boolean;
 };
 
-// function Menu({ routes }: menuProps) {
 function Menu({ expandedControl }: menuProps) {
     const { expanded } = useAppSelector((state) => state.menu);
     const dispatch = useDispatch();

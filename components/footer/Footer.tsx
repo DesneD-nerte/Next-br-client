@@ -1,36 +1,39 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 import FooterColumn from "./components/FooterColumn";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
     const firstLinksColumn = [
-        { name: "FAQs", href: "/faqs" },
-        { name: "Sitemap", href: "/sitemap" },
+        { name: "footerHelpColumn-FAQs", href: "/faqs" },
+        { name: "footerHelpColumn-siteMap", href: "/sitemap" },
     ];
     const secondLinksColumn = [
-        { name: "BR", href: "/about" },
-        { name: "Privacy & Cookies", href: "/cookies" },
+        { name: "footerCompanyColumn-BR", href: "/about" },
+        { name: "footerCompanyColumn-PrivacyAndCookies", href: "/cookies" },
     ];
     const thirdLinksColumn = [
-        { name: "Instagram", href: "/instagram" },
-        { name: "Facebook", href: "/facebook" },
+        { name: "footerContantsColumn-Instagram", href: "/instagram" },
+        { name: "footerContantsColumn-Facebook", href: "/facebook" },
     ];
+
+    const { t } = useTranslation("footer");
 
     return (
         <footer className={styles.footerContainer}>
             <FooterColumn
                 links={firstLinksColumn}
-                title="NEED HELP?"
+                title={t("footerHelpColumn")}
                 key={1}
             ></FooterColumn>
             <FooterColumn
                 links={secondLinksColumn}
-                title="COMPANY"
+                title={t("footerCompanyColumn")}
                 key={2}
             ></FooterColumn>
             <FooterColumn
                 links={thirdLinksColumn}
-                title="CONTACT US"
+                title={t("footerContantsColumn")}
                 key={3}
             ></FooterColumn>
         </footer>

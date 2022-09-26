@@ -4,6 +4,7 @@ import { routeProperties } from "../../../../../types/routeProperties";
 import styles from "./MenuItems.module.scss";
 import SubMenu from "../SubMenu/SubMenu";
 import TriangleIcon from "../../../svg/icon-menu-column.svg";
+import { useTranslation } from "next-i18next";
 
 type menuItemsProps = {
     oneMenuRoute: routeProperties;
@@ -26,6 +27,8 @@ function MenuItems({ oneMenuRoute }: menuItemsProps) {
         timerStack.current.push(timer);
     };
 
+    const { t } = useTranslation("menu");
+
     return (
         <li
             className={styles.onePath}
@@ -41,7 +44,7 @@ function MenuItems({ oneMenuRoute }: menuItemsProps) {
                         dropDown && styles.onePath__navLink_active
                     }`}
                 >
-                    {oneMenuRoute.name}
+                    {t(`${oneMenuRoute.interName}`)}
                     <div className={styles.onePath__navLinkIcon}>
                         <TriangleIcon />
                     </div>

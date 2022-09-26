@@ -1,0 +1,10 @@
+{
+    "buttonFilter": {
+        "text": "Отсортировать по",
+        "undefined": "Значение",
+        "HighToLow": "По уменьшению цены",
+        "LowToHigh": "По возрастанию цены"
+    },
+
+    "continueButton": "Продолжить"
+}

@@ -15,8 +15,8 @@
 
     &__right {
         display: flex;
-    align-items: center;
-    margin-right: 20px;
+        align-items: center;
+        margin-right: 20px;
     }
 
     &__button {
@@ -25,6 +25,17 @@
     }
 
     &__button:hover {
-        color: white
+        color: white;
+    }
+
+    &__icon {
+        width: 18px;
+        height: 15px;
+
+        &:hover {
+            > .iconSearch {
+                fill: rgb(238, 238, 238);
+            }
+        }
     }
 }

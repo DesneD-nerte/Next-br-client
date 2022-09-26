@@ -1,5 +1,6 @@
 import { CircularProgress } from "@mui/material";
 import type { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import WithGallery from "../components/layout/WithGallery";
 import { IDataGallery } from "../models/IDataGallery";
@@ -38,10 +39,15 @@ const Home: NextPage = () => {
 
 export default Home;
 
-// export async function getStaticProps(context) {
-//     return (
-//         props: {
-
-//         }
-//     )
-// }
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, [
+                "common",
+                "footer",
+                "menu",
+            ])),
+            // Will be passed to the page component as props
+        },
+    };
+}

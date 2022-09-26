@@ -1,0 +1,29 @@
+{
+    "signIn": "Войти",
+    "bag": "Сумка",
+    "searchPlaceholder": "Что вы ищете?",
+
+    "menu-women": "Женщины",
+    "menu-women-item1": "Туфли",
+    "menu-women-item2": "Тапочки",
+    "menu-women-item3": "Сандали",
+    "menu-women-item4": "Платье",
+    "menu-women-item5": "Пузырь",
+    "menu-women-item6": "Кимоно",
+
+    "menu-men": "Мужчины",
+    "menu-men-item1": "Туфли",
+    "menu-men-item2": "Тапочки",
+    "menu-men-item3": "Сандали",
+    "menu-men-item4": "Платье",
+    "menu-men-item5": "Пузырь",
+    "menu-men-item6": "Кимоно",
+
+    "menu-children": "Дети",
+    "menu-children-item1": "Туфли",
+    "menu-children-item2": "Тапочки",
+    "menu-children-item3": "Сандали",
+    "menu-children-item4": "Платье",
+    "menu-children-item5": "Пузырь",
+    "menu-children-item6": "Кимоно"
+}

@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import router from "next/router";
 import React, { useEffect, useState } from "react";
 import { useDebounce } from "../../../hooks/useDebounce";
@@ -11,6 +12,8 @@ const SearchForm = () => {
     const debounced = useDebounce(search);
 
     const dispatch = useAppDispatch();
+
+    const { t } = useTranslation("menu");
 
     useEffect(() => {
         dispatch(fetchItems(debounced, 9));
@@ -28,7 +31,7 @@ const SearchForm = () => {
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
                     className={styles.inputContainer__input}
-                    placeholder="What are you looking for?"
+                    placeholder={t("searchPlaceholder")}
                 ></input>
                 <button
                     type="submit"
