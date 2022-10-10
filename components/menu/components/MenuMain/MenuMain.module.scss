@@ -29,13 +29,25 @@
     }
 
     &__icon {
-        width: 18px;
-        height: 15px;
+        width: 15px;
+        height: 100%;
 
         &:hover {
             > .iconSearch {
                 fill: rgb(238, 238, 238);
             }
         }
+    }
+}
+
+.menuSelect {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: 300;
+    margin-right: 15px;
+
+    &__option {
+        background-color: black;
     }
 }

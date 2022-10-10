@@ -4,7 +4,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import WithGallery from "../components/layout/WithGallery";
 import { IDataGallery } from "../models/IDataGallery";
-import styles from "../styles/Home.module.css";
 
 const data: IDataGallery[] = [
     {
@@ -39,7 +38,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }: { locale: string }) {
     return {
         props: {
             ...(await serverSideTranslations(locale, [
