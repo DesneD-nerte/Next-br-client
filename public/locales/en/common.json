@@ -1,7 +1,7 @@
 {
     "buttonFilter": {
         "text": "Sort by",
-        "undefined": "Relevance",
+        "undefined": "Relevance:",
         "HighToLow": "Price: High to Low",
         "LowToHigh": "Price: Low to High"
     },

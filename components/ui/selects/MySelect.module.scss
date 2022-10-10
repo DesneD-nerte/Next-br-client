@@ -1,11 +1,19 @@
 .mySelect {
-    border: 1px black solid;
+    position: relative;
+    &__button {
+        width: 100px;
+        height: 40px;
+        border: 1px black solid;
+    }
 }
 
 .selectContainer {
     position: absolute;
     right: 0px;
     border: 1px solid gray;
+    min-width: 200px;
+    z-index: 1;
+    background-color: white;
 
     &__item {
         display: flex;

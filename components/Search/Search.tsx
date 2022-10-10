@@ -18,10 +18,7 @@ export const Search: FC = () => {
 
     return (
         <Fragment>
-            <div
-                className={styles.wrapperSearch}
-                onMouseDown={handleVisible}
-            ></div>
+            <div className={styles.wrapperSearch} onMouseDown={handleVisible}></div>
 
             <div className={styles.searchContainer}>
                 <SearchForm />
