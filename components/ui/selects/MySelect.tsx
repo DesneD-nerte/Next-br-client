@@ -53,7 +53,10 @@ const MySelect = <T extends unknown>({ optionsArray }: mySelectProps<T>) => {
                     {optionsArray.map((oneOptions) => {
                         return (
                             <li className={styles.selectContainer__item} key={oneOptions.i18Name}>
-                                <button onClick={() => handleItem(oneOptions.option)}>
+                                <button
+                                    onClick={() => handleItem(oneOptions.option)}
+                                    className={styles.selectContainer__button}
+                                >
                                     {t(oneOptions.i18Name)}
                                 </button>
                             </li>

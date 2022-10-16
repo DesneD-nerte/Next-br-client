@@ -1,5 +1,6 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { Fragment } from "react";
 import WithGallery from "../../../../components/layout/WithGallery";
 import { IDataGallery } from "../../../../models/IDataGallery";
 
@@ -23,9 +24,19 @@ function ItemPants() {
 
     const { name } = router.query;
     return (
-        <WithGallery data={data}>
-            <div>Pants: {name}</div>
-        </WithGallery>
+        <Fragment>
+            <Head>
+                <title>Pants | Bond Reality</title>
+                <meta
+                    name="description"
+                    content="Look at the entire collection of Bond Shop pants."
+                />
+            </Head>
+
+            <WithGallery data={data}>
+                <div>Pants: {name}</div>
+            </WithGallery>
+        </Fragment>
     );
 }
 

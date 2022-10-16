@@ -21,7 +21,6 @@
         text-align: center;
         cursor: pointer;
         height: 40px;
-        padding: 5px 10px 5px 10px;
 
         &:first-of-type {
             background-color: rgb(224, 224, 224);
@@ -34,5 +33,11 @@
         &:hover {
             background-color: rgb(216, 216, 216);
         }
+    }
+
+    &__button {
+        height: 100%;
+        width: 100%;
+        text-align: start;
     }
 }

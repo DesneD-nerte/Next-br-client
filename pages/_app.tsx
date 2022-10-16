@@ -11,9 +11,10 @@ import MainLayout from "../components/layout/MainLayout";
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
-            {/* <Head>
+            <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-            </Head> */}
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <Provider store={store}>
                 <MainLayout>
                     <Component {...pageProps} />

@@ -1,4 +1,6 @@
 import { CircularProgress } from "@mui/material";
+import Head from "next/head";
+import { Fragment } from "react";
 import WithGallery from "../../components/layout/WithGallery";
 import { IDataGallery } from "../../models/IDataGallery";
 import styles from "../../styles/Home.module.css";
@@ -20,11 +22,18 @@ const data: IDataGallery[] = [
 
 const WomenPage = () => {
     return (
-        <WithGallery data={data}>
-            <main className={styles.main}>
-                <CircularProgress sx={{ color: "#2c2c2c" }}></CircularProgress>
-            </main>
-        </WithGallery>
+        <Fragment>
+            <Head>
+                <title>Women | Bond Reality</title>
+                <meta name="description" content="Women's category of the Bond Shop." />
+            </Head>
+
+            <WithGallery data={data}>
+                <main className={styles.main}>
+                    <CircularProgress sx={{ color: "#2c2c2c" }}></CircularProgress>
+                </main>
+            </WithGallery>
+        </Fragment>
     );
 };
 

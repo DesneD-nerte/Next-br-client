@@ -1,5 +1,6 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import React, { useEffect } from "react";
+import Head from "next/head";
+import React, { Fragment, useEffect } from "react";
 import LoginForm from "../../components/forms/auth/login/LoginForm";
 import MainContent from "../../components/layout/MainContent";
 import { useAppDispatch } from "../../store/hooks";
@@ -13,9 +14,16 @@ function SignIn() {
     }, []);
 
     return (
-        <MainContent isMargin={false}>
-            <LoginForm></LoginForm>
-        </MainContent>
+        <Fragment>
+            <Head>
+                <title>Auth | Bond Reality</title>
+                <meta name="description" content="Sign In | Sign Up to Bond Shop." />
+            </Head>
+
+            <MainContent>
+                <LoginForm></LoginForm>
+            </MainContent>
+        </Fragment>
     );
 }
 
