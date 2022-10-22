@@ -10,9 +10,16 @@ const MainContent = React.memo(({ children }: mainContentProps) => {
     return (
         <>
             <Menu expandedControl={false} />
-            <main className={`container-fluid ${styles.contentContainer}`}>{children}</main>
+            <main className={`${styles.contentContainer}`}>{children}</main>
         </>
     );
+
+    // return (
+    //     <>
+    //         <Menu expandedControl={false} />
+    //         <main className={`container-fluid ${styles.contentContainer}`}>{children}</main>
+    //     </>
+    // );
 
     // const MainContent = React.memo(({ isMargin, children }: mainContentProps) => {
     // const marginClass = isMargin === true ? styles.contentContainer_margin : "";

@@ -1,4 +1,6 @@
 .contentContainer {
+    display: flex;
+    position: relative;
     background-color: #eeeeee;
     min-height: 75vh;
 }
