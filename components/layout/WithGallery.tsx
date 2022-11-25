@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect } from "react";
-import { IDataGallery } from "../../models/IDataGallery";
-import { useAppDispatch } from "../../store/hooks";
-import { setExpandMenu } from "../../store/reducers/MenuSlice";
-import MainGallery from "../gallery/MainGallery";
-import Menu from "../menu/Menu";
 import styles from "./WithGallery.module.css";
+
+import { useAppDispatch } from "@store/hooks";
+import { setExpandMenu } from "@store/reducers/MenuSlice";
+
+import { IDataGallery } from "@models/IDataGallery";
+import MainGallery from "@components/gallery/MainGallery";
+import Menu from "@components/menu/Menu";
 
 type galleryProps = {
     data: IDataGallery[];

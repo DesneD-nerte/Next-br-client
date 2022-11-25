@@ -1,6 +1,6 @@
-import Head from "next/head";
 import React, { Fragment } from "react";
-import MainLayout from "../../components/layout/MainLayout";
+import Head from "next/head";
+import MainLayout from "@layouts/MainLayout";
 
 function index() {
     return (

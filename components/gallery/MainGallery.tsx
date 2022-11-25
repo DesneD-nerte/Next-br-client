@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { IDataGallery } from "../../models/IDataGallery";
-import ImageGallery from "./components/ImageGallery";
 import styles from "./MainGallery.module.css";
-import LeftButtonIcon from "./svg/icon-left-gallery.svg";
-import RightButtonIcon from "./svg/icon-right-gallery.svg";
+
+import { IDataGallery } from "@models/IDataGallery";
+import ImageGallery from "./components/ImageGallery";
+import LeftButtonIcon from "@svg/gallery/icon-left-gallery.svg";
+import RightButtonIcon from "@svg/gallery/icon-right-gallery.svg";
 
 type galleryProps = {
     data: IDataGallery[];
@@ -30,10 +31,7 @@ function MainGallery({ data }: galleryProps) {
 
     return (
         <section className={styles.mainComponent}>
-            <button
-                className={`${styles.button} ${styles.buttonLeft}`}
-                onClick={handleBack}
-            >
+            <button className={`${styles.button} ${styles.buttonLeft}`} onClick={handleBack}>
                 <LeftButtonIcon />
             </button>
             {data.map((oneData, index) => {
@@ -50,10 +48,7 @@ function MainGallery({ data }: galleryProps) {
                     />
                 );
             })}
-            <button
-                className={`${styles.button} ${styles.buttonRight}`}
-                onClick={handleForward}
-            >
+            <button className={`${styles.button} ${styles.buttonRight}`} onClick={handleForward}>
                 <div>
                     <RightButtonIcon />
                 </div>

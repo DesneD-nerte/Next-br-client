@@ -1,17 +1,19 @@
 import React from "react";
-import styles from "./Menu.module.scss";
-import Routes from "./components/MenuRoutes/Routes";
-import { useAppSelector } from "../../store/hooks";
-import MenuMain from "./components/MenuMain/MenuMain";
-import routes from "../../pages/site-map";
 import { useDispatch } from "react-redux";
-import { setExpandMenu } from "../../store/reducers/MenuSlice";
+import styles from "./Menu.module.scss";
+
+import { useAppSelector } from "@store/hooks";
+import { setExpandMenu } from "@store/reducers/MenuSlice";
+
+import routes from "@root/pages/site-map";
+import Routes from "./components/MenuRoutes/Routes";
+import MenuMain from "./components/MenuMain/MenuMain";
 
 type menuProps = {
     expandedControl?: boolean;
 };
 
-function Menu({ expandedControl }: menuProps) {
+const Menu = ({ expandedControl }: menuProps) => {
     const { expanded } = useAppSelector((state) => state.menu);
     const dispatch = useDispatch();
 
@@ -22,11 +24,7 @@ function Menu({ expandedControl }: menuProps) {
     return (
         <header className={styles.headerMenu}>
             <div
-                className={
-                    expanded
-                        ? styles.menuContainer__expanded
-                        : styles.menuContainer__hidden
-                }
+                className={expanded ? styles.menuContainer__expanded : styles.menuContainer__hidden}
             >
                 <MenuMain />
                 <nav>
@@ -35,6 +33,6 @@ function Menu({ expandedControl }: menuProps) {
             </div>
         </header>
     );
-}
+};
 
 export default React.memo(Menu);

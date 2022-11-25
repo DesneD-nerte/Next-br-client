@@ -1,10 +1,11 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../../../../store/hooks";
-import { setExpandMenu } from "../../../../../store/reducers/MenuSlice";
-import { setVisible } from "../../../../../store/reducers/SearchSlice";
-import SearchIcon from "../../../svg/icon-search.svg";
 import styles from "./MenuSearch.module.scss";
-import { Search } from "../../../../Search/Search";
+
+import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { setExpandMenu } from "@store/reducers/MenuSlice";
+import { setVisible } from "@store/reducers/SearchSlice";
+import { Search } from "@components/search/Search";
+import SearchIcon from "@svg/menu/icon-search.svg";
 
 const MenuSearch = () => {
     const { visible } = useAppSelector((state) => state.search);

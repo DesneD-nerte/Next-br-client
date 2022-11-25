@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import styles from "./ImageGallery.module.css";
+import Image from "next/image";
 import router from "next/router";
 
 type imageGalleryProps = {
@@ -15,8 +15,7 @@ type imageGalleryProps = {
 };
 
 function ImageGallery(props: imageGalleryProps) {
-    const disabledClass =
-        props.myIndex !== props.currentIndex ? styles.disabledContainer : "";
+    const disabledClass = props.myIndex !== props.currentIndex ? styles.disabledContainer : "";
 
     const handleClick = () => {
         router.push(props.url);

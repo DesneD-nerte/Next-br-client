@@ -1,7 +1,8 @@
 import React from "react";
-import MySelect, { mySelectOptions } from "../../ui/selects/MySelect";
-import FilterPanel from "./FilterPanel";
 import styles from "./ControlPanel.module.scss";
+
+import MySelect, { mySelectOptions } from "@ui/selects/MySelect";
+import FilterPanel from "./FilterPanel";
 
 type SelectSort = undefined | "HighToLow" | "LowToHigh";
 const selectOptions: mySelectOptions<SelectSort>[] = [

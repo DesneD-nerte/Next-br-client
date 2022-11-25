@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../menu/Menu";
+import Menu from "@components/menu/Menu";
 import styles from "./MainContent.module.css";
 
 type mainContentProps = {

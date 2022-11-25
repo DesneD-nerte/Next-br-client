@@ -1,13 +1,13 @@
+import React from "react";
+import { IItem } from "@models/IITem";
 import Image from "next/image";
 import Link from "next/link";
-import React, { FC } from "react";
-import { IItem } from "../../../../models/IITem";
 
 interface SearchItemProps {
     item: IItem;
 }
 
-const SearchItemImage: FC<SearchItemProps> = ({ item }: SearchItemProps) => {
+const SearchItemImage = ({ item }: SearchItemProps) => {
     return (
         <Link href={"/" + item.url}>
             <a>

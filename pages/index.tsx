@@ -1,9 +1,11 @@
-import { CircularProgress } from "@mui/material";
 import type { NextPage } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import WithGallery from "../components/layout/WithGallery";
-import { IDataGallery } from "../models/IDataGallery";
+
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { CircularProgress } from "@mui/material";
+
+import WithGallery from "@layouts/WithGallery";
+import { IDataGallery } from "@models/IDataGallery";
 
 const data: IDataGallery[] = [
     {

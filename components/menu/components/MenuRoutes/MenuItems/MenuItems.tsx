@@ -1,10 +1,11 @@
-import Link from "next/link";
 import React, { useRef, useState } from "react";
-import { routeProperties } from "../../../../../types/routeProperties";
 import styles from "./MenuItems.module.scss";
-import SubMenu from "../SubMenu/SubMenu";
-import TriangleIcon from "../../../svg/icon-menu-column.svg";
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
+
+import { routeProperties } from "@root/types/routeProperties";
+import SubMenu from "../SubMenu/SubMenu";
+import TriangleIcon from "@svg/menu/icon-menu-column.svg";
 
 type menuItemsProps = {
     oneMenuRoute: routeProperties;
@@ -51,10 +52,7 @@ function MenuItems({ oneMenuRoute }: menuItemsProps) {
                 </a>
             </Link>
 
-            <SubMenu
-                childRoutes={oneMenuRoute.children}
-                dropDown={dropDown}
-            ></SubMenu>
+            <SubMenu childRoutes={oneMenuRoute.children} dropDown={dropDown}></SubMenu>
         </li>
     );
 }

@@ -1,8 +1,9 @@
+import React from "react";
+import styles from "./OneColumn.module.scss";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
-import React from "react";
-import { childRoutes } from "../../../../../types/routeProperties";
-import styles from "./OneColumn.module.scss";
+
+import { childRoutes } from "@root/types/routeProperties";
 
 interface OneColumnMenuRoutesProps {
     oneColumn: childRoutes[];
@@ -17,10 +18,7 @@ const OneColumn = (props: OneColumnMenuRoutesProps) => {
         <ul className={styles.oneColumn}>
             {oneColumn.map((oneColumnRoute) => {
                 return (
-                    <li
-                        className={styles.oneColumn__onePath}
-                        key={oneColumnRoute.path}
-                    >
+                    <li className={styles.oneColumn__onePath} key={oneColumnRoute.path}>
                         <Link href={oneColumnRoute.path}>
                             <a className={styles.oneColumn__button}>
                                 {t(`${oneColumnRoute.interName}`)}

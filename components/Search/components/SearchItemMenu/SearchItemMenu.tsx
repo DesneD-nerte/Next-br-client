@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useAppSelector } from "../../../../store/hooks";
+import { useAppSelector } from "@store/hooks";
 // import siteMap from "../../../../pages/site-map";
 
 function SearchItemMenu() {

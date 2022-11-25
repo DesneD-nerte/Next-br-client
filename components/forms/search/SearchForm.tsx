@@ -1,11 +1,13 @@
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import router from "next/router";
-import React, { useEffect, useState } from "react";
-import { useDebounce } from "../../../hooks/useDebounce";
-import { useAppDispatch } from "../../../store/hooks";
-import { fetchItems } from "../../../store/reducers/ActionCreators";
-import { setVisible } from "../../../store/reducers/SearchSlice";
 import styles from "./SearchForm.module.scss";
+
+import { useAppDispatch } from "@store/hooks";
+import { fetchItems } from "@store/reducers/ActionCreators";
+import { setVisible } from "@store/reducers/SearchSlice";
+
+import { useDebounce } from "@hooks/useDebounce";
 
 const SearchForm = () => {
     const [search, setSearch] = useState("");

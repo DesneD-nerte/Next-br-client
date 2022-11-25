@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from "react";
-import MyInput from "../../../ui/inputs/MyInput";
+import MyInput from "@ui/inputs/MyInput";
 import styles from "./LoginForm.module.scss";
 
 const LoginForm = () => {
@@ -13,10 +13,7 @@ const LoginForm = () => {
     };
 
     return (
-        <form
-            onSubmit={(event) => handleSubmit(event)}
-            className={styles.loginForm}
-        >
+        <form onSubmit={(event) => handleSubmit(event)} className={styles.loginForm}>
             <MyInput
                 value={email}
                 setValue={setEmail}

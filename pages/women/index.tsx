@@ -1,9 +1,11 @@
-import { CircularProgress } from "@mui/material";
-import Head from "next/head";
 import { Fragment } from "react";
-import WithGallery from "../../components/layout/WithGallery";
-import { IDataGallery } from "../../models/IDataGallery";
+import Head from "next/head";
 import styles from "../../styles/Home.module.css";
+
+import { CircularProgress } from "@mui/material";
+
+import WithGallery from "@layouts/WithGallery";
+import { IDataGallery } from "@models/IDataGallery";
 
 const data: IDataGallery[] = [
     {

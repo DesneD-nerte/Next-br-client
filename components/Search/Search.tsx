@@ -1,12 +1,14 @@
-import { FC, Fragment } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { setVisible } from "../../store/reducers/SearchSlice";
-import SearchList from "./components/SearchList/SearchList";
+import { Fragment } from "react";
 import styles from "./Search.module.scss";
-import { setExpandMenu } from "../../store/reducers/MenuSlice";
-import SearchForm from "../forms/search/SearchForm";
 
-export const Search: FC = () => {
+import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { setVisible } from "@store/reducers/SearchSlice";
+import { setExpandMenu } from "@store/reducers/MenuSlice";
+
+import SearchForm from "@forms/search/SearchForm";
+import SearchList from "./components/SearchList/SearchList";
+
+export const Search = () => {
     const { visible } = useAppSelector((state) => state.search);
 
     const dispatch = useAppDispatch();

@@ -1,14 +1,15 @@
-import type { NextPage } from "next";
-import Link from "next/link";
-import styles from "./search.module.scss";
-import Image from "next/image";
-import MainContent from "../../components/layout/MainContent";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Fragment, useState } from "react";
-import MyInput from "../../components/ui/inputs/MyInput";
+import type { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import MySelect, { mySelectOptions } from "../../components/ui/selects/MySelect";
-import FilterPanel from "../../components/pages/search/FilterPanel";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./search.module.scss";
+
+import MainContent from "@components/layout/MainContent";
+import MySelect, { mySelectOptions } from "@components/UI/selects/MySelect";
+import FilterPanel from "@components/pages/search/FilterPanel";
+import MyInput from "@components/UI/inputs/MyInput";
 
 type SelectSort = undefined | "HighToLow" | "LowToHigh";
 const selectOptions: mySelectOptions<SelectSort>[] = [

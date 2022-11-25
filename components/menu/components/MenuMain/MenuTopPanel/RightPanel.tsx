@@ -1,10 +1,11 @@
-import Link from "next/link";
 import React from "react";
-import MenuSearch from "../MenuSearch/MenuSearch";
-import IconHeart from "../../../svg/icon-menu-heart.svg";
 import styles from "../MenuMain.module.scss";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import Link from "next/link";
+
+import MenuSearch from "../MenuSearch/MenuSearch";
+import IconHeart from "@svg/menu/icon-menu-heart.svg";
 
 const RightPanel = () => {
     const router = useRouter();

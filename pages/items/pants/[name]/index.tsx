@@ -1,8 +1,9 @@
+import React, { Fragment } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { Fragment } from "react";
-import WithGallery from "../../../../components/layout/WithGallery";
-import { IDataGallery } from "../../../../models/IDataGallery";
+
+import WithGallery from "@components/layout/WithGallery";
+import { IDataGallery } from "@models/IDataGallery";
 
 const data: IDataGallery[] = [
     {

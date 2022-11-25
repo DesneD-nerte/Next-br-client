@@ -1,10 +1,11 @@
-import React, { FC } from "react";
-import { useAppSelector } from "../../../../store/hooks";
-import SearchItemImage from "../SearchItemImage/SearchItemImage";
-import SearchItemMenu from "../SearchItemMenu/SearchItemMenu";
+import React from "react";
 import styles from "./SearchList.module.scss";
 
-const SearchList: FC = React.memo(() => {
+import { useAppSelector } from "@store/hooks";
+import SearchItemImage from "../SearchItemImage/SearchItemImage";
+import SearchItemMenu from "../SearchItemMenu/SearchItemMenu";
+
+const SearchList = () => {
     const { items } = useAppSelector((state) => state.search);
 
     return (
@@ -17,15 +18,13 @@ const SearchList: FC = React.memo(() => {
 
             <section className={styles.searchedContainer__Right}>
                 {items.length ? (
-                    items.map((item) => (
-                        <SearchItemImage key={item.id} item={item} />
-                    ))
+                    items.map((item) => <SearchItemImage key={item.id} item={item} />)
                 ) : (
                     <span>Sorry we couldn`t find any items</span>
                 )}
             </section>
         </div>
     );
-});
+};
 
-export default SearchList;
+export default React.memo(SearchList);
