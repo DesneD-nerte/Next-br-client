@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IItem } from "../../models/IITem";
 
 interface MenuState {
     expanded: boolean;
@@ -7,17 +6,17 @@ interface MenuState {
 
 const initialState: MenuState = {
     expanded: true,
-}
+};
 
 export const menuSlice = createSlice({
-    name: 'menu',
+    name: "menu",
     initialState,
     reducers: {
         setExpandMenu: (state, action: PayloadAction<boolean>) => {
             state.expanded = action.payload;
-        }
-    }
-})
+        },
+    },
+});
 
 export const { setExpandMenu } = menuSlice.actions;
 

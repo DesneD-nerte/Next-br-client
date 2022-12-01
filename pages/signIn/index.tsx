@@ -3,7 +3,7 @@ import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import LoginForm from "@components/forms/auth/login/LoginForm";
-import MainContent from "@components/layout/MainContent";
+import MainContent from "@layouts/MainContent/MainContent";
 import { useAppDispatch } from "@store/hooks";
 import { setExpandMenu } from "@store/reducers/MenuSlice";
 

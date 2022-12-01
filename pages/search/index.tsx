@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./search.module.scss";
 
-import MainContent from "@components/layout/MainContent";
+import MainContent from "@layouts/MainContent/MainContent";
 import MySelect, { mySelectOptions } from "@components/UI/selects/MySelect";
 import FilterPanel from "@components/pages/search/FilterPanel";
 import MyInput from "@components/UI/inputs/MyInput";

@@ -2,8 +2,6 @@ import React, { Fragment } from "react";
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import WithGallery from "@layouts/WithGallery";
-
 const FavouritePage = () => {
     return (
         <Fragment>

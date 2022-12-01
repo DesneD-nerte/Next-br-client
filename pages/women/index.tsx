@@ -4,7 +4,7 @@ import styles from "../../styles/Home.module.css";
 
 import { CircularProgress } from "@mui/material";
 
-import WithGallery from "@layouts/WithGallery";
+import WithGallery from "@layouts/WithGallery/WithGallery";
 import { IDataGallery } from "@models/IDataGallery";
 
 const data: IDataGallery[] = [

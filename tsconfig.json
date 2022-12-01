@@ -20,7 +20,7 @@
             "@ui/*": ["./components/UI/*"],
             "@models/*": ["./models/*"],
             "@components/*": ["./components/*"],
-            "@layouts/*": ["./components/layout/*"],
+            "@layouts/*": ["./layouts/*"],
             "@forms/*": ["./components/forms/*"],
             "@hooks/*": ["./hooks/*"],
             "@store/*": ["./store/*"],
