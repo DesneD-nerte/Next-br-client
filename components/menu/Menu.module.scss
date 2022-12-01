@@ -1,13 +1,8 @@
 $headerHeight: 120px;
 
 %menuContainer {
-    position: fixed;
-    width: 100%;
-    height: $headerHeight;
-    z-index: 100;
-
+    height: 100%;
     padding-top: 10px;
-
     background-image: linear-gradient(180deg, #2c2c2c, transparent);
 }
 
@@ -23,7 +18,7 @@ $headerHeight: 120px;
     }
 
     to {
-        background-image: linear-gradient(180deg, #2c2c2c, transparent)
+        background-image: linear-gradient(180deg, #2c2c2c, transparent);
     }
 }
 
@@ -33,6 +28,9 @@ $headerHeight: 120px;
 
 .headerMenu {
     height: $headerHeight;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
 
 .menuContainer__expanded {
@@ -41,7 +39,7 @@ $headerHeight: 120px;
     animation-name: example;
     animation-duration: 1s;
 
-    &:hover{
+    &:hover {
         @include animationBackground($animationProp: unset);
     }
 }
