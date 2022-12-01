@@ -31,7 +31,7 @@ function MainGallery({ data }: galleryProps) {
 
     return (
         <section className={styles.mainComponent}>
-            <button className={`${styles.button} ${styles.buttonLeft}`} onClick={handleBack}>
+            <button className={styles.button} onClick={handleBack}>
                 <LeftButtonIcon />
             </button>
             {data.map((oneData, index) => {
@@ -48,7 +48,7 @@ function MainGallery({ data }: galleryProps) {
                     />
                 );
             })}
-            <button className={`${styles.button} ${styles.buttonRight}`} onClick={handleForward}>
+            <button className={styles.button} onClick={handleForward}>
                 <div>
                     <RightButtonIcon />
                 </div>

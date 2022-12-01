@@ -1,0 +1,14 @@
+@use "../variables" as variables;
+
+.mainButton {
+    border: 1px solid variables.$mainBlackColor;
+    background-color: #7070705c;
+    padding: 15px 40px;
+    max-width: 175px;
+    color: #eeeeee;
+    font-weight: 500;
+}
+
+.mainButton_hover:hover {
+    background-color: variables.$mainBlackColor;
+}
