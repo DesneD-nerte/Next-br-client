@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ImageGallery.module.css";
+import styles from "./ImageGallery.module.scss";
 import Image from "next/image";
 import router from "next/router";
 
@@ -15,19 +15,25 @@ type imageGalleryProps = {
 };
 
 function ImageGallery(props: imageGalleryProps) {
-    const disabledClass = props.myIndex !== props.currentIndex ? styles.disabledContainer : "";
+    const { myIndex, currentIndex, url, urlImage, description, name } = props;
+
+    const disabledClass = myIndex !== currentIndex ? styles.disabledContainer : "";
 
     const handleClick = () => {
-        router.push(props.url);
+        router.push(url);
     };
 
     return (
         <div className={`${styles.containerImage} ${disabledClass}`}>
-            <Image src={props.urlImage} alt="image" layout="fill" objectFit="cover" />
-            <div className={styles.content}>
-                <a className={styles.unselectableDescription}>{props.description}</a>
-                <h1 className={styles.unselectableDescription}>{props.name}</h1>
-                <button className={styles.buttonImage} onClick={handleClick}>
+            <Image src={urlImage} alt="image" layout="fill" objectFit="cover" />
+            <div className={styles.containerImage__content}>
+                <a>{description}</a>
+                <h1>{name}</h1>
+                <button
+                    tabIndex={disabledClass ? -1 : 0}
+                    className="mainButton mainButton_hover"
+                    onClick={handleClick}
+                >
                     Shop Now
                 </button>
             </div>
