@@ -1,0 +1,53 @@
+.menuMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left {
+        margin-left: 20px;
+    }
+
+    &__logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+    &__button {
+        color: rgb(230, 230, 230);
+        margin-right: 20px;
+    }
+
+    &__button:hover {
+        color: white;
+    }
+
+    &__icon {
+        width: 15px;
+        height: 100%;
+
+        &:hover {
+            > .iconSearch {
+                fill: rgb(238, 238, 238);
+            }
+        }
+    }
+}
+
+.menuSelect {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: 300;
+    margin-right: 15px;
+
+    &__option {
+        background-color: black;
+    }
+}
