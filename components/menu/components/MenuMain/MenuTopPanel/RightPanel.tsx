@@ -13,7 +13,8 @@ const RightPanel = () => {
     const { t } = useTranslation("menu");
 
     const handleChangeLanguage = (languageValue: string) => {
-        router.replace(`/${languageValue}`);
+        const path = router.pathname;
+        router.push(path, path, { locale: languageValue });
     };
 
     return (
