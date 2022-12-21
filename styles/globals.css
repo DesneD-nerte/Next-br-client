@@ -6,6 +6,16 @@ body {
         Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+#__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
 ul {
     margin: 0;
     padding: 0;
