@@ -6,7 +6,7 @@ import SearchItemImage from "../SearchItemImage/SearchItemImage";
 import SearchItemMenu from "../SearchItemMenu/SearchItemMenu";
 
 const SearchList = () => {
-    const { items } = useAppSelector((state) => state.search);
+    const { items } = useAppSelector((state) => state.menuSearch);
 
     return (
         <div className={styles.searchedContainer}>

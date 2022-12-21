@@ -1,14 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import MenuSlice from "./reducers/MenuSlice";
-import SearchSlice from "./reducers/SearchSlice";
+import MenuSlice from "./reducers/menu/MenuSlice";
+import MenuSearchSlice from "./reducers/menu/MenuSearchSlice";
 
 export const store = configureStore({
     reducer: {
-        search: SearchSlice,
-        menu: MenuSlice
-    }
-})
+        menuSearch: MenuSearchSlice,
+        menu: MenuSlice,
+    },
+});
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;

@@ -2,13 +2,14 @@ import React from "react";
 import styles from "./MenuSearch.module.scss";
 
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { setExpandMenu } from "@store/reducers/MenuSlice";
-import { setVisible } from "@store/reducers/SearchSlice";
-import { Search } from "@components/search/Search";
+import { setExpandMenu } from "@store/reducers/menu/MenuSlice";
+import { setVisible } from "@root/store/reducers/menu/MenuSearchSlice";
+import { Search } from "@components/menu/components/search/Search";
+
 import SearchIcon from "@svg/menu/icon-search.svg";
 
 const MenuSearch = () => {
-    const { visible } = useAppSelector((state) => state.search);
+    const { visible } = useAppSelector((state) => state.menuSearch);
 
     const dispatch = useAppDispatch();
 

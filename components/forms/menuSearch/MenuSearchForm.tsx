@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import router from "next/router";
-import styles from "./SearchForm.module.scss";
+
+import styles from "./MenuSearchForm.module.scss";
 
 import { useAppDispatch } from "@store/hooks";
-import { fetchItems } from "@store/reducers/ActionCreators";
-import { setVisible } from "@store/reducers/SearchSlice";
+import { fetchItems } from "@root/store/reducers/menu/ActionCreators";
+import { setVisible } from "@root/store/reducers/menu/MenuSearchSlice";
 
 import { useDebounce } from "@hooks/useDebounce";
 

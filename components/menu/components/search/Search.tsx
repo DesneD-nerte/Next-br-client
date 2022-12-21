@@ -2,14 +2,14 @@ import { Fragment } from "react";
 import styles from "./Search.module.scss";
 
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { setVisible } from "@store/reducers/SearchSlice";
-import { setExpandMenu } from "@store/reducers/MenuSlice";
+import { setVisible } from "@root/store/reducers/menu/MenuSearchSlice";
+import { setExpandMenu } from "@store/reducers/menu/MenuSlice";
 
-import SearchForm from "@forms/search/SearchForm";
+import SearchForm from "@root/components/forms/menuSearch/MenuSearchForm";
 import SearchList from "./components/SearchList/SearchList";
 
 export const Search = () => {
-    const { visible } = useAppSelector((state) => state.search);
+    const { visible } = useAppSelector((state) => state.menuSearch);
 
     const dispatch = useAppDispatch();
 

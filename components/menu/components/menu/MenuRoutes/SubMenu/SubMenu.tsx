@@ -1,5 +1,6 @@
 import React from "react";
-import { childRoutes } from "../../../../../types/routeProperties";
+import { childRoutes } from "@root/types/routeProperties";
+
 import OneColumn from "../OneColumn/OneColumn";
 import styles from "./SubMenu.module.scss";
 

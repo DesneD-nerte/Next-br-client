@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import styles from "./WithGallery.module.css";
 
 import { useAppDispatch } from "@store/hooks";
-import { setExpandMenu } from "@store/reducers/MenuSlice";
+import { setExpandMenu } from "@store/reducers/menu/MenuSlice";
 
 import { IDataGallery } from "@models/IDataGallery";
 import MainGallery from "@components/gallery/MainGallery";

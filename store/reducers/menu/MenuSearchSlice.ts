@@ -1,20 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IItem } from "../../models/IITem";
+import { IItem } from "@root/models/IITem";
 
 interface SearchState {
-    searchValue: string
-    visible: boolean
-    items: IItem[]
+    searchValue: string;
+    visible: boolean;
+    items: IItem[];
 }
 
 const initialState: SearchState = {
     searchValue: "",
     visible: false,
-    items: []
-}
+    items: [],
+};
 
-export const searchSlice = createSlice({
-    name: 'search',
+export const menuSearchSlice = createSlice({
+    name: "menuSearch",
     initialState,
     reducers: {
         setSearch: (state, action: PayloadAction<string>) => {
@@ -25,10 +25,10 @@ export const searchSlice = createSlice({
         },
         itemsFetching: (state, action: PayloadAction<IItem[]>) => {
             state.items = action.payload;
-        }
-    }
-})
+        },
+    },
+});
 
-export const { setSearch, setVisible, itemsFetching } = searchSlice.actions;
+export const { setSearch, setVisible, itemsFetching } = menuSearchSlice.actions;
 
-export default searchSlice.reducer;
+export default menuSearchSlice.reducer;
