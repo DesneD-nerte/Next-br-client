@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "./MenuItems.module.scss";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
@@ -11,21 +11,26 @@ type menuItemsProps = {
     oneMenuRoute: routeProperties;
 };
 
-function MenuItems({ oneMenuRoute }: menuItemsProps) {
+function useDelay(dropState: boolean, delay = 200) {
     const [dropDown, setDropDown] = useState(false);
-    const timerStack = useRef<Array<NodeJS.Timeout>>([]);
 
-    const handleFocus = (dropState: boolean) => {
-        if (!dropState) {
-            for (const oneTimer of timerStack.current) {
-                clearTimeout(oneTimer);
-            }
-        }
-
+    useEffect(() => {
         const timer = setTimeout(() => {
             setDropDown(dropState);
-        }, 200);
-        timerStack.current.push(timer);
+        }, delay);
+
+        return () => clearTimeout(timer);
+    }, [dropState, delay]);
+
+    return dropDown;
+}
+
+function MenuItems({ oneMenuRoute }: menuItemsProps) {
+    const [dropDown, setDropDown] = useState(false);
+    const delayedDropDown = useDelay(dropDown);
+
+    const handleFocus = (dropState: boolean) => {
+        setDropDown(dropState);
     };
 
     const { t } = useTranslation("menu");
@@ -52,7 +57,7 @@ function MenuItems({ oneMenuRoute }: menuItemsProps) {
                 </a>
             </Link>
 
-            <SubMenu childRoutes={oneMenuRoute.children} dropDown={dropDown}></SubMenu>
+            <SubMenu childRoutes={oneMenuRoute.children} dropDown={delayedDropDown}></SubMenu>
         </li>
     );
 }
