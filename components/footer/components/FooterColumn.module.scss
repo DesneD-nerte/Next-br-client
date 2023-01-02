@@ -1,6 +1,8 @@
+@use "/styles/variables" as variables;
+
 .ulColumn {
     font-size: 14px;
-    color: #a8a8a8;
+    color: variables.$lightGray;
     margin-top: 20px;
 
     &__onePath:nth-child(n):hover {

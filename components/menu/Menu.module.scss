@@ -1,24 +1,29 @@
+@use "/styles/variables" as variables;
+
+$mainColor: variables.$mainBlackColor;
+$hoverColor: variables.$hoverBlackColor;
+
 $headerHeight: 120px;
 
 %menuContainer {
     height: 100%;
     padding-top: 10px;
-    background-image: linear-gradient(180deg, #2c2c2c, transparent);
+    background-image: linear-gradient(180deg, $mainColor, transparent);
 }
 
 @mixin animationBackground($animationProp: none) {
-    background-color: #111111;
+    background-color: $hoverColor;
     background-image: none;
     animation: $animationProp;
 }
 
 @keyframes example {
     from {
-        background-color: #2c2c2c;
+        background-color: $mainColor;
     }
 
     to {
-        background-image: linear-gradient(180deg, #2c2c2c, transparent);
+        background-image: linear-gradient(180deg, $mainColor, transparent);
     }
 }
 
@@ -37,7 +42,7 @@ $headerHeight: 120px;
     @extend %menuContainer;
 
     animation-name: example;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 
     &:hover {
         @include animationBackground($animationProp: unset);
@@ -47,7 +52,7 @@ $headerHeight: 120px;
 .menuContainer__hidden {
     @extend %menuContainer;
 
-    background-color: #2c2c2c;
+    background-color: $mainColor;
     transition: background-color 0.5s ease-out;
 
     &:hover {

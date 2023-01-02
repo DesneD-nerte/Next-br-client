@@ -1,6 +1,18 @@
 @use "../variables" as variables;
 
-.mainButton {
+$mainColor: variables.$mainBlackColor;
+$hoverColor: variables.$hoverBlackColor;
+
+@keyframes example {
+    from {
+        background-color: $hoverColor;
+    }
+    to {
+        background-color: $mainColor;
+    }
+}
+
+.promoButton {
     border: 1px solid variables.$mainBlackColor;
     background-color: #7070705c;
     padding: 15px 40px;
@@ -9,6 +21,31 @@
     font-weight: 500;
 }
 
-.mainButton_hover:hover {
+.promoButton_hover:hover {
     background-color: variables.$mainBlackColor;
+}
+
+.mainButton {
+    display: block;
+    color: white;
+    width: 100%;
+    padding: 15px 40px;
+
+    font-size: variables.$fontSize;
+    background-color: $mainColor;
+
+    animation-name: example;
+    animation-duration: 1s;
+
+    &:hover {
+        border: 3px white solid;
+        background-color: $hoverColor;
+        animation: unset;
+    }
+
+    &:focus {
+        border: 3px white solid;
+        background-color: $hoverColor;
+        animation: unset;
+    }
 }

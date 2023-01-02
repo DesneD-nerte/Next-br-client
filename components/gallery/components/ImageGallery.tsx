@@ -31,7 +31,7 @@ function ImageGallery(props: imageGalleryProps) {
                 <h1>{name}</h1>
                 <button
                     tabIndex={disabledClass ? -1 : 0}
-                    className="mainButton mainButton_hover"
+                    className="promoButton promoButton_hover"
                     onClick={handleClick}
                 >
                     Shop Now

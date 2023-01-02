@@ -1,9 +1,15 @@
-$mainColor: #2c2c2c;
-$hoverColor: #111111;
+@use "/styles/variables" as variables;
+
+$mainColor: variables.$mainBlackColor;
+$hoverColor: variables.$hoverBlackColor;
 
 @keyframes example {
-    from { background-color: $hoverColor; }
-    to { background-color: $mainColor; }
+    from {
+        background-color: $hoverColor;
+    }
+    to {
+        background-color: $mainColor;
+    }
 }
 
 .footerContainer {

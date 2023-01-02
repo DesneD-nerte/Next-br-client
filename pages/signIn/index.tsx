@@ -5,7 +5,9 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import LoginForm from "@components/forms/auth/login/LoginForm";
 import MainContent from "@layouts/MainContent/MainContent";
 import { useAppDispatch } from "@store/hooks";
-import { setExpandMenu } from "@store/reducers/MenuSlice";
+import { setExpandMenu } from "@store/reducers/menu/MenuSlice";
+
+import styles from "./signIn.module.scss";
 
 function SignIn() {
     const dispatch = useAppDispatch();
@@ -22,7 +24,9 @@ function SignIn() {
             </Head>
 
             <MainContent>
-                <LoginForm></LoginForm>
+                <div className={styles.loginContainer}>
+                    <LoginForm></LoginForm>
+                </div>
             </MainContent>
         </Fragment>
     );
