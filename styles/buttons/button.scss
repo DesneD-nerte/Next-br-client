@@ -9,6 +9,7 @@ $hoverWhiteColor: variables.$hoverWhiteColor;
     position: relative;
     padding: 15px 40px;
     height: 55px;
+    line-height: 15px;
 }
 
 .promoButton {
@@ -31,7 +32,6 @@ $hoverWhiteColor: variables.$hoverWhiteColor;
     display: block;
     color: white;
     width: 100%;
-    padding: 15px 40px;
 
     // font-size: variables.$fontSize;
     background-color: $mainColor;
@@ -53,7 +53,6 @@ $hoverWhiteColor: variables.$hoverWhiteColor;
     display: block;
     color: black;
     width: 100%;
-    padding: 15px 40px;
     border: 1px $mainColor solid;
 
     // font-size: variables.$largeFontSize;

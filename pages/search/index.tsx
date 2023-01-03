@@ -71,59 +71,59 @@ const Search: NextPage = () => {
 
                         <div className={"row g-0"}>
                             <div className={"col-6 col-md-4 col-lg-3 gx-1"}>
-                                <Link href="/">
-                                    <a>
-                                        <Image
-                                            src="/landscape/1.jpg"
-                                            width={60}
-                                            height={60}
-                                            alt="image"
-                                            layout="responsive"
-                                            objectFit="cover"
-                                        ></Image>
-                                    </a>
+                                <Link
+                                    href="/"
+                                    className={"position-relative"}
+                                    style={{ height: 300 }}
+                                >
+                                    <Image
+                                        src="/landscape/1.jpg"
+                                        alt="image"
+                                        className={styles.oneImage}
+                                        fill
+                                    ></Image>
                                 </Link>
                             </div>
                             <div className={"col-6 col-md-4 col-lg-3 gx-1"}>
-                                <Link href="/">
-                                    <a>
-                                        <Image
-                                            src="/landscape/2.jpg"
-                                            width={60}
-                                            height={60}
-                                            alt="image"
-                                            layout="responsive"
-                                            objectFit="cover"
-                                        ></Image>
-                                    </a>
+                                <Link
+                                    href="/"
+                                    className={"position-relative"}
+                                    style={{ height: 300 }}
+                                >
+                                    <Image
+                                        src="/landscape/2.jpg"
+                                        alt="image"
+                                        className={styles.oneImage}
+                                        fill
+                                    ></Image>
                                 </Link>
                             </div>
                             <div className={"col-6 col-md-4 col-lg-3 gx-1"}>
-                                <Link href="/">
-                                    <a>
-                                        <Image
-                                            src="/landscape/3.jpg"
-                                            width={60}
-                                            height={60}
-                                            alt="image"
-                                            layout="responsive"
-                                            objectFit="cover"
-                                        ></Image>
-                                    </a>
+                                <Link
+                                    href="/"
+                                    className={"position-relative"}
+                                    style={{ height: 300 }}
+                                >
+                                    <Image
+                                        src="/landscape/3.jpg"
+                                        alt="image"
+                                        className={styles.oneImage}
+                                        fill
+                                    ></Image>
                                 </Link>
                             </div>
                             <div className={"col-6 col-md-4 col-lg-3 gx-1"}>
-                                <Link href="/">
-                                    <a>
-                                        <Image
-                                            src="/landscape/4.jpg"
-                                            width={40}
-                                            height={40}
-                                            alt="image"
-                                            layout="responsive"
-                                            objectFit="cover"
-                                        ></Image>
-                                    </a>
+                                <Link
+                                    href="/"
+                                    className={"position-relative"}
+                                    style={{ height: 300 }}
+                                >
+                                    <Image
+                                        src="/landscape/4.jpg"
+                                        alt="image"
+                                        className={styles.oneImage}
+                                        fill
+                                    ></Image>
                                 </Link>
                             </div>
                         </div>
