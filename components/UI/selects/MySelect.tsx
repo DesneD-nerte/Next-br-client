@@ -11,7 +11,7 @@ interface mySelectProps<T> {
     optionsArray: mySelectOptions<T>[];
 }
 
-const MySelect = <T extends unknown>({ optionsArray }: mySelectProps<T>) => {
+function MySelect<T>({ optionsArray }: mySelectProps<T>) {
     const [pickedSort, setPickedSort] = useState<T>();
     const [openedList, setOpenedList] = useState(false);
 
@@ -44,7 +44,10 @@ const MySelect = <T extends unknown>({ optionsArray }: mySelectProps<T>) => {
 
     return (
         <div ref={refDiv} className={styles.mySelect}>
-            <button onClick={handleClick} className={styles.mySelect__button}>
+            <button
+                onClick={handleClick}
+                className={`button button_mainWhiteButton ${styles.mySelect__button}`}
+            >
                 {t("buttonFilter.text")}
             </button>
 
@@ -66,6 +69,6 @@ const MySelect = <T extends unknown>({ optionsArray }: mySelectProps<T>) => {
             )}
         </div>
     );
-};
+}
 
 export default MySelect;

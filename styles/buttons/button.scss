@@ -1,68 +1,11 @@
-@use "../variables" as variables;
+@use "./_promoButton/button_promoButton.scss";
+@use "./_mainButton/button_mainButton.scss";
+@use "./_paddingButton/button_paddingButton.scss";
+@use "./_mainWhiteButton/mainWhiteButton";
 
-$mainColor: variables.$mainBlackColor;
-$hoverColor: variables.$hoverBlackColor;
-$mainWhiteColor: variables.$mainWhiteColor;
-$hoverWhiteColor: variables.$hoverWhiteColor;
-
-%button {
+.button {
     position: relative;
-    padding: 15px 40px;
     height: 55px;
     line-height: 15px;
-}
-
-.promoButton {
-    @extend %button;
-
-    border: 1px solid variables.$mainBlackColor;
-    background-color: #7070705c;
-    max-width: 175px;
-    color: #eeeeee;
-    font-weight: 500;
-}
-
-.promoButton_hover:hover {
-    background-color: variables.$mainBlackColor;
-}
-
-.mainButton {
-    @extend %button;
-
-    display: block;
-    color: white;
     width: 100%;
-
-    // font-size: variables.$fontSize;
-    background-color: $mainColor;
-
-    &:hover {
-        border: 1px white solid;
-        background-color: $hoverColor;
-    }
-
-    &:focus {
-        border: 3px white solid;
-        background-color: $hoverColor;
-    }
-}
-
-.mainWhiteButton {
-    @extend %button;
-
-    display: block;
-    color: black;
-    width: 100%;
-    border: 1px $mainColor solid;
-
-    // font-size: variables.$largeFontSize;
-    background-color: $mainWhiteColor;
-
-    &:hover {
-        background-color: $hoverWhiteColor;
-    }
-
-    &:focus {
-        background-color: $hoverWhiteColor;
-    }
 }

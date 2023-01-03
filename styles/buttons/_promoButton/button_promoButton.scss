@@ -1,0 +1,15 @@
+@use "../../variables" as variables;
+
+$mainColor: variables.$mainBlackColor;
+
+.button_promoButton {
+    border: 1px solid $mainColor;
+    background-color: #7070705c;
+    max-width: 175px;
+    color: #eeeeee;
+    font-weight: 500;
+
+    &:hover {
+        background-color: $mainColor;
+    }
+}

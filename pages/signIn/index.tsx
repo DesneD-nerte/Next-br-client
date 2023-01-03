@@ -30,7 +30,7 @@ function SignIn() {
                     <h2>My account</h2>
 
                     <Link href={"google.com"} className={`${styles.loginContainer__link}`}>
-                        <button className={`mainWhiteButton`}>
+                        <button className="button button_mainWhiteButton button_paddingButton">
                             <div className={styles.loginContainer__icon}>
                                 <FcGoogle size={30} />
                             </div>

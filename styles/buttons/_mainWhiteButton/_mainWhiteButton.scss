@@ -1,0 +1,21 @@
+@use "../../variables" as variables;
+
+$mainColor: variables.$mainBlackColor;
+$mainWhiteColor: variables.$mainWhiteColor;
+$hoverWhiteColor: variables.$hoverWhiteColor;
+
+.button_mainWhiteButton {
+    color: black;
+    width: 100%;
+    border: 1px $mainColor solid;
+
+    background-color: $mainWhiteColor;
+
+    &:hover {
+        background-color: $hoverWhiteColor;
+    }
+
+    &:focus {
+        background-color: $hoverWhiteColor;
+    }
+}

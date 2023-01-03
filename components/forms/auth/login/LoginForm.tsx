@@ -47,7 +47,7 @@ const LoginForm = () => {
             />
             {errors.password?.type === "required" && <p role="alert">Password is required</p>}
 
-            <input type="submit" className={"mainButton"} value={"CONTINUE"} />
+            <input type="submit" className="button button_mainButton" value={"CONTINUE"} />
         </form>
     );
 };

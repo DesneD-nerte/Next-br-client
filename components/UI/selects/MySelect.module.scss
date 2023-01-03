@@ -2,7 +2,7 @@
     &__button {
         min-width: 100px;
         height: 40px;
-        border: 1px black solid;
+        // padding: 0;
     }
 }
 
@@ -35,8 +35,6 @@
     }
 
     &__button {
-        height: 100%;
-        width: 100%;
         text-align: start;
     }
 }
