@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ControlPanel.module.scss";
 
 import MySelect, { mySelectOptions } from "@ui/selects/MySelect";
-import FilterPanel from "./FilterPanel";
+import MyInput from "@components/UI/inputs/MyInput";
 
 type SelectSort = undefined | "HighToLow" | "LowToHigh";
 const selectOptions: mySelectOptions<SelectSort>[] = [
@@ -20,13 +20,37 @@ const selectOptions: mySelectOptions<SelectSort>[] = [
     },
 ];
 
-const ControlPanel = () => {
+interface ControlPanelProps {
+    handleToggleFilter: () => void;
+}
+
+const ControlPanel = ({ handleToggleFilter }: ControlPanelProps) => {
+    const [searchString, setSearchString] = useState("");
+
     return (
-        <div className={styles.controlContainer}>
-            <FilterPanel></FilterPanel>
-            <MySelect optionsArray={selectOptions}></MySelect>
-        </div>
+        <>
+            <div className={styles.controlContainer}>
+                <button
+                    className={`button button_mainWhiteButton ${styles.controlContainer__filterButton}`}
+                    onClick={handleToggleFilter}
+                >
+                    Filter
+                </button>
+
+                <MySelect optionsArray={selectOptions}></MySelect>
+            </div>
+
+            <div className={styles.searchContainer}>
+                <MyInput
+                    value={searchString}
+                    setValue={setSearchString}
+                    id="searchItems-input"
+                    type="text"
+                    labelTitle="Find items"
+                ></MyInput>
+            </div>
+        </>
     );
 };
 
-export default ControlPanel;
+export default React.memo(ControlPanel);

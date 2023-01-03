@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useCallback, useState } from "react";
 import type { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -7,37 +7,18 @@ import Image from "next/image";
 import styles from "./search.module.scss";
 
 import MainContent from "@layouts/MainContent/MainContent";
-import MySelect, { mySelectOptions } from "@components/UI/selects/MySelect";
 import FilterPanel from "@components/pages/search/FilterPanel";
-import MyInput from "@components/UI/inputs/MyInput";
-
-type SelectSort = undefined | "HighToLow" | "LowToHigh";
-const selectOptions: mySelectOptions<SelectSort>[] = [
-    {
-        option: undefined,
-        i18Name: "buttonFilter.undefined",
-    },
-    {
-        option: "HighToLow",
-        i18Name: "buttonFilter.HighToLow",
-    },
-    {
-        option: "LowToHigh",
-        i18Name: "buttonFilter.LowToHigh",
-    },
-];
+import ControlPanel from "@components/pages/search/ControlPanel";
 
 const Search: NextPage = () => {
     // const [allItems, setAllItems] = useState();
     const [isOpenedFilterPanel, setIsOpenedFilterPanel] = useState(false);
 
-    const handleClickFilter = () => {
+    const handleToggleFilter = useCallback(() => {
         setIsOpenedFilterPanel((isOpenedFilterPanel) => {
             return !isOpenedFilterPanel;
         });
-    };
-
-    const [searchString, setSearchString] = useState("");
+    }, []);
 
     return (
         <Fragment>
@@ -50,24 +31,11 @@ const Search: NextPage = () => {
                 <div className={"row g-0 w-100"}>
                     {isOpenedFilterPanel && (
                         <div className={`${"col-3"}`}>
-                            <FilterPanel />
+                            <FilterPanel handleToggleFilter={handleToggleFilter} />
                         </div>
                     )}
                     <div className={`${isOpenedFilterPanel && "col-9"}`}>
-                        <div className={styles.controlContainer}>
-                            <button onClick={handleClickFilter}>Filter</button>
-                            <MySelect optionsArray={selectOptions}></MySelect>
-                        </div>
-
-                        <div className={styles.searchContainer}>
-                            <MyInput
-                                value={searchString}
-                                setValue={setSearchString}
-                                id="searchItems-input"
-                                type="text"
-                                labelTitle="Find items"
-                            ></MyInput>
-                        </div>
+                        <ControlPanel handleToggleFilter={handleToggleFilter} />
 
                         <div className={"row g-0"}>
                             <div className={"col-6 col-md-4 col-lg-3 gx-1"}>
