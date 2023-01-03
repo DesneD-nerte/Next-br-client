@@ -1,33 +1,20 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./MenuItems.module.scss";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 import { routeProperties } from "@root/types/routeProperties";
-import SubMenu from "../SubMenu/SubMenu";
+import SubMenu from "./SubMenu/SubMenu";
 import TriangleIcon from "@svg/menu/icon-menu-column.svg";
+import { useDebounce } from "@root/hooks/useDebounce";
 
 type menuItemsProps = {
     oneMenuRoute: routeProperties;
 };
 
-function useDelay(dropState: boolean, delay = 200) {
-    const [dropDown, setDropDown] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setDropDown(dropState);
-        }, delay);
-
-        return () => clearTimeout(timer);
-    }, [dropState, delay]);
-
-    return dropDown;
-}
-
 function MenuItems({ oneMenuRoute }: menuItemsProps) {
     const [dropDown, setDropDown] = useState(false);
-    const delayedDropDown = useDelay(dropDown);
+    const delayedDropDown = useDebounce(dropDown, 200);
 
     const handleFocus = (dropState: boolean) => {
         setDropDown(dropState);
