@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const MenuSkip = () => {
     return (
-        <Link href={"#main"}>
-            <a className={styles.skipMenu}>Skip content</a>
+        <Link href={"#main"} className={styles.skipMenu}>
+            Skip content
         </Link>
     );
 };

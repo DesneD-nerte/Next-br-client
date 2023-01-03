@@ -32,18 +32,19 @@ const RightPanel = () => {
                 </option>
             </select>
 
-            <Link href={"./signIn"}>
-                <a className={styles.menuMain__button}>{t("signIn")}</a>
+            <Link href={"./signIn"} className={styles.menuMain__button}>
+                {t("signIn")}
             </Link>
 
-            <Link href={"./favourite"}>
-                <a className={`${styles.menuMain__button} ${styles.menuMain__icon}`}>
-                    <IconHeart className={styles.iconSearch}></IconHeart>
-                </a>
+            <Link
+                href={"./favourite"}
+                className={`${styles.menuMain__button} ${styles.menuMain__icon}`}
+            >
+                <IconHeart className={styles.iconSearch}></IconHeart>
             </Link>
 
-            <Link href={"./bag"}>
-                <a className={styles.menuMain__button}>{t("bag")}</a>
+            <Link href={"./bag"} className={styles.menuMain__button}>
+                {t("bag")}
             </Link>
 
             <MenuSearch />

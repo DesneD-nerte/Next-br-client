@@ -23,14 +23,8 @@ const FooterColumn = (props: IFooterColumnProps) => {
             <ul className={styles.ulColumn}>
                 {props.links.map((oneLink) => {
                     return (
-                        <li
-                            className={styles.ulColumn__onePath}
-                            key={oneLink.href}
-                        >
-                            <Link href={oneLink.href}>
-                                {/* <a>{oneLink.name}</a> */}
-                                <a>{t(`${oneLink.name}`)}</a>
-                            </Link>
+                        <li className={styles.ulColumn__onePath} key={oneLink.href}>
+                            <Link href={oneLink.href}>{t(`${oneLink.name}`)}</Link>
                         </li>
                     );
                 })}

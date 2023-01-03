@@ -8,6 +8,8 @@ import { useAppDispatch } from "@store/hooks";
 import { setExpandMenu } from "@store/reducers/menu/MenuSlice";
 
 import styles from "./signIn.module.scss";
+import Link from "next/link";
+import { FcGoogle } from "react-icons/fc";
 
 function SignIn() {
     const dispatch = useAppDispatch();
@@ -25,6 +27,23 @@ function SignIn() {
 
             <MainContent>
                 <div className={styles.loginContainer}>
+                    <h2>My account</h2>
+
+                    <Link href={"google.com"} className={`${styles.loginContainer__link}`}>
+                        {/* <button className={`mainWhiteButton ${styles.loginContainer__link}`}>
+                            <div className={styles.loginContainer__icon}>
+                                <FcGoogle size={30} />
+                            </div>
+                            CONTINUE WITH GOOGLE
+                        </button> */}
+                        <button className={`mainWhiteButton`}>
+                            <div className={styles.loginContainer__icon}>
+                                <FcGoogle size={30} />
+                            </div>
+                            CONTINUE WITH GOOGLE
+                        </button>
+                    </Link>
+
                     <LoginForm></LoginForm>
                 </div>
             </MainContent>

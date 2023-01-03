@@ -19,10 +19,8 @@ const OneColumn = (props: OneColumnMenuRoutesProps) => {
             {oneColumn.map((oneColumnRoute) => {
                 return (
                     <li className={styles.oneColumn__onePath} key={oneColumnRoute.path}>
-                        <Link href={oneColumnRoute.path}>
-                            <a className={styles.oneColumn__button}>
-                                {t(`${oneColumnRoute.interName}`)}
-                            </a>
+                        <Link href={oneColumnRoute.path} className={styles.oneColumn__button}>
+                            {t(`${oneColumnRoute.interName}`)}
                         </Link>
                     </li>
                 );

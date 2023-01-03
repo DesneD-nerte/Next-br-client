@@ -3,6 +3,7 @@
     position: relative;
     background-color: #eeeeee;
     padding-top: 120px;
+    justify-content: center;
 }
 
 /* .contentContainer_margin {

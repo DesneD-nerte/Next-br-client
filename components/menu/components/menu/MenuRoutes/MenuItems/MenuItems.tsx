@@ -31,17 +31,16 @@ function MenuItems({ oneMenuRoute }: menuItemsProps) {
             onFocus={() => handleFocus(true)}
             onBlur={() => handleFocus(false)}
         >
-            <Link href={oneMenuRoute.path}>
-                <a
-                    className={`${styles.onePath__navLink} ${
-                        dropDown && styles.onePath__navLink_active
-                    }`}
-                >
-                    {t(`${oneMenuRoute.interName}`)}
-                    <div className={styles.onePath__navLinkIcon}>
-                        <TriangleIcon />
-                    </div>
-                </a>
+            <Link
+                href={oneMenuRoute.path}
+                className={`${styles.onePath__navLink} ${
+                    dropDown && styles.onePath__navLink_active
+                }`}
+            >
+                {t(`${oneMenuRoute.interName}`)}
+                <div className={styles.onePath__navLinkIcon}>
+                    <TriangleIcon />
+                </div>
             </Link>
 
             <SubMenu childRoutes={oneMenuRoute.children} dropDown={delayedDropDown}></SubMenu>

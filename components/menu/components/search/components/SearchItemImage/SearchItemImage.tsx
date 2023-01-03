@@ -10,15 +10,13 @@ interface SearchItemProps {
 const SearchItemImage = ({ item }: SearchItemProps) => {
     return (
         <Link href={"/" + item.url}>
-            <a>
-                <Image
-                    src={process.env.NEXT_PUBLIC_API + item.photos[0].url}
-                    width={120}
-                    height={120}
-                    alt="image"
-                    layout="fixed"
-                ></Image>
-            </a>
+            <Image
+                src={process.env.NEXT_PUBLIC_API + item.photos[0].url}
+                width={120}
+                height={120}
+                alt="image"
+                layout="fixed"
+            ></Image>
         </Link>
     );
 };
