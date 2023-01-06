@@ -7,14 +7,16 @@
 }
 
 .button {
-    margin-right: 15px;
-    margin-left: 15px;
     border: 0;
     background-color: transparent;
     cursor: pointer;
     z-index: 2;
-}
 
-.button :hover {
-    /* background-color: lightgray; */
+    &__Left {
+        padding-left: 15px;
+    }
+
+    &__Right {
+        padding-right: 15px;
+    }
 }

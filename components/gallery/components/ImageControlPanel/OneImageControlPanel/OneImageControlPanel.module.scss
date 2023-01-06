@@ -1,0 +1,50 @@
+@use "/styles/variables" as variables;
+
+$mainWhiteColor: variables.$mainWhiteColor;
+
+.carouselDots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
+    width: 15px;
+    position: relative;
+    border-radius: 50%;
+    margin: auto 5px;
+    cursor: pointer;
+
+    &__mainCircle {
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        background-color: white;
+
+        &_active {
+            background-color: unset;
+        }
+    }
+
+    &__outerCircle {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        border: 2px solid $mainWhiteColor;
+        opacity: 0;
+        transition: opacity 0.25s;
+
+        &_active {
+            opacity: 1;
+        }
+    }
+
+    &:hover {
+        & > .carouselDots__outerCircle {
+            opacity: 1;
+        }
+    }
+}

@@ -1,13 +1,15 @@
 import React from "react";
 import { IDataGallery } from "@root/models/IDataGallery";
 import OneImageGallery from "./OneImageGallery/OneImageGallery";
+import ImageControlPanel from "../ImageControlPanel/ImageControlPanel";
 
 interface imageGalleryProps {
     data: IDataGallery[];
     currentIndex: number;
+    handleChangeImage: (indexImage: number) => void;
 }
 
-function ImageGallery({ data, currentIndex }: imageGalleryProps) {
+function ImageGallery({ data, currentIndex, handleChangeImage }: imageGalleryProps) {
     return (
         <>
             {data.map((oneData, index) => {
@@ -24,6 +26,11 @@ function ImageGallery({ data, currentIndex }: imageGalleryProps) {
                     />
                 );
             })}
+            <ImageControlPanel
+                data={data}
+                currentIndex={currentIndex}
+                handleChangeImage={handleChangeImage}
+            />
         </>
     );
 }
