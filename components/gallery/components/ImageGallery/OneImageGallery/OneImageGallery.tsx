@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ImageGallery.module.scss";
+import styles from "./OneImageGallery.module.scss";
 import Image from "next/image";
 import router from "next/router";
 
@@ -14,7 +14,7 @@ type imageGalleryProps = {
     currentIndex: number;
 };
 
-function ImageGallery(props: imageGalleryProps) {
+function OneImageGallery(props: imageGalleryProps) {
     const { myIndex, currentIndex, url, urlImage, description, name } = props;
 
     const disabledClass = myIndex !== currentIndex ? styles.disabledContainer : "";
@@ -41,4 +41,4 @@ function ImageGallery(props: imageGalleryProps) {
     );
 }
 
-export default ImageGallery;
+export default OneImageGallery;

@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import styles from "./MainGallery.module.css";
 
 import { IDataGallery } from "@models/IDataGallery";
-import ImageGallery from "./components/ImageGallery";
+
 import LeftButtonIcon from "@svg/gallery/icon-left-gallery.svg";
 import RightButtonIcon from "@svg/gallery/icon-right-gallery.svg";
 
-type galleryProps = {
-    data: IDataGallery[];
-};
+import ImageGallery from "./components/ImageGallery/ImageGallery";
+import ImageControlPanel from "./components/ImageControlPanel/ImageControlPanel";
 
-function MainGallery({ data }: galleryProps) {
+interface mainGalleryProps {
+    data: IDataGallery[];
+}
+
+function MainGallery({ data }: mainGalleryProps) {
     const [indexData, setIndexData] = useState(0);
 
     const handleForward = () => {
@@ -29,25 +32,15 @@ function MainGallery({ data }: galleryProps) {
         }
     };
 
+    const handleSetImage = () => {};
+
     return (
         <section className={styles.mainComponent}>
             <button className={styles.button} onClick={handleBack}>
                 <LeftButtonIcon />
             </button>
-            {data.map((oneData, index) => {
-                return (
-                    <ImageGallery
-                        urlImage={oneData.urlImage}
-                        url={oneData.url}
-                        name={oneData.name}
-                        description={oneData.description}
-                        myIndex={index}
-                        currentIndex={indexData}
-                        count={data.length}
-                        key={index}
-                    />
-                );
-            })}
+            <ImageGallery data={data} currentIndex={indexData} />
+            <ImageControlPanel data={data} />
             <button className={styles.button} onClick={handleForward}>
                 <div>
                     <RightButtonIcon />
