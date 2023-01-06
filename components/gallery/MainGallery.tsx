@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./MainGallery.module.scss";
 
 import { IDataGallery } from "@models/IDataGallery";
@@ -35,6 +35,14 @@ function MainGallery({ data }: mainGalleryProps) {
     const handleSetImage = useCallback((indexImage: number) => {
         setIndexData(indexImage);
     }, []);
+
+    useEffect(() => {
+        const timerInterval = setInterval(() => {
+            handleForward();
+        }, 5000);
+
+        return () => clearInterval(timerInterval);
+    }, [indexData]);
 
     return (
         <section className={styles.mainComponent}>
