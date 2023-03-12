@@ -1,15 +1,13 @@
 import React from "react";
-import Footer from "@components/footer/Footer";
-import MenuSkip from "@components/menu/components/menu/MenuSkip/MenuSkip";
+import Footer from "@templates/footers/Footer";
 
-const Layout = React.memo(({ children }: React.PropsWithChildren) => {
+const MainLayout = React.memo(({ children }: React.PropsWithChildren) => {
     return (
         <>
-            <MenuSkip />
             {children}
             <Footer />
         </>
     );
 });
 
-export default Layout;
+export default MainLayout;

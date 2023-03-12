@@ -4,7 +4,8 @@ import styles from "./MenuSearch.module.scss";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { setExpandMenu } from "@store/reducers/menu/MenuSlice";
 import { setVisible } from "@root/store/reducers/menu/MenuSearchSlice";
-import { Search } from "@components/menu/components/search/Search";
+import { Search } from "../../../Search";
+
 
 import SearchIcon from "@svg/menu/icon-search.svg";
 

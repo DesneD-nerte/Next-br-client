@@ -4,8 +4,8 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-import MenuSearch from "../MenuSearch/MenuSearch";
 import IconHeart from "@svg/menu/icon-menu-heart.svg";
+import MenuSearch from "../MenuSearch/MenuSearch";
 
 const RightPanel = () => {
     const router = useRouter();

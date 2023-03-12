@@ -6,7 +6,7 @@ import { IDataGallery } from "@models/IDataGallery";
 import LeftButtonIcon from "@svg/gallery/icon-left-gallery.svg";
 import RightButtonIcon from "@svg/gallery/icon-right-gallery.svg";
 
-import ImageGallery from "./components/ImageGallery/ImageGallery";
+import ImageGallery from "../ImageGallery/ImageGallery";
 import { useCallback } from "react";
 
 interface mainGalleryProps {

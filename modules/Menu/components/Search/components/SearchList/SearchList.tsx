@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./SearchList.module.scss";
 
 import { useAppSelector } from "@store/hooks";
-import SearchItemImage from "../SearchItemImage/SearchItemImage";
 import SearchItemMenu from "../SearchItemMenu/SearchItemMenu";
+import SearchItemImage from "../SearchItemImage/SearchItemImage";
 
 const SearchList = () => {
     const { items } = useAppSelector((state) => state.menuSearch);

@@ -15,7 +15,7 @@ const SearchItemImage = ({ item }: SearchItemProps) => {
                 width={120}
                 height={120}
                 alt="image"
-                layout="fixed"
+                // layout="fixed"
             ></Image>
         </Link>
     );

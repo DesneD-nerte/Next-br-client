@@ -6,9 +6,9 @@ import { setVisible } from "@root/store/reducers/menu/MenuSearchSlice";
 import { setExpandMenu } from "@store/reducers/menu/MenuSlice";
 
 import SearchForm from "@root/components/forms/menuSearch/MenuSearchForm";
-import SearchList from "./components/SearchList/SearchList";
+import SearchList from "../SearchList/SearchList";
 
-export const Search = () => {
+const Search = () => {
     const { visible } = useAppSelector((state) => state.menuSearch);
 
     const dispatch = useAppDispatch();
@@ -29,3 +29,5 @@ export const Search = () => {
         </Fragment>
     );
 };
+
+export default Search;

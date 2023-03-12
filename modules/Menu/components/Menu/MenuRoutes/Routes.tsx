@@ -10,15 +10,13 @@ type menuRoutesProps = {
 
 const Routes = ({ routes }: menuRoutesProps) => {
     return (
-        <div className={styles.menuLinks}>
-            <ul>
-                {routes.map((oneMenuRoute: routeProperties) => {
-                    return (
-                        <MenuItems oneMenuRoute={oneMenuRoute} key={oneMenuRoute.path}></MenuItems>
-                    );
-                })}
-            </ul>
-        </div>
+        <ul className={styles.menuLinks}>
+            {routes.map((oneMenuRoute: routeProperties) => {
+                return (
+                    <MenuItems oneMenuRoute={oneMenuRoute} key={oneMenuRoute.path}></MenuItems>
+                );
+            })}
+        </ul>
     );
 };
 

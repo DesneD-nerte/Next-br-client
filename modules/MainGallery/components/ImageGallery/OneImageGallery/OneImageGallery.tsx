@@ -25,7 +25,8 @@ function OneImageGallery(props: imageGalleryProps) {
 
     return (
         <div className={`${styles.containerImage} ${disabledClass}`}>
-            <Image src={urlImage} alt="image" layout="fill" objectFit="cover" />
+            {/* <Image src={urlImage} alt="image" layout="fill" objectFit="cover"/> */}
+            <Image src={urlImage} alt="image" fill style={{objectFit: "cover"}}/>
             <div className={styles.containerImage__content}>
                 <a>{description}</a>
                 <h1>{name}</h1>

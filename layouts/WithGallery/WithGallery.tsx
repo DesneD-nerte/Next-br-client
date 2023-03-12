@@ -5,8 +5,8 @@ import { useAppDispatch } from "@store/hooks";
 import { setExpandMenu } from "@store/reducers/menu/MenuSlice";
 
 import { IDataGallery } from "@models/IDataGallery";
-import MainGallery from "@components/gallery/MainGallery";
-import Menu from "@components/menu/Menu";
+import MainGallery from "@modules/MainGallery";
+import {MainHeader} from "@templates/headers";
 
 type galleryProps = {
     data: IDataGallery[];
@@ -39,7 +39,7 @@ const WithGallery = React.memo(({ data, children }: galleryProps) => {
 
     return (
         <>
-            <Menu />
+            <MainHeader />
             <MainGallery data={data}></MainGallery>
             <main id="main" className={styles.contentContainer}>
                 {children}

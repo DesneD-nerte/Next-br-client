@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "@components/menu/Menu";
+import {MainHeader} from "@templates/headers";
 import styles from "./MainContent.module.css";
 
 type mainContentProps = {
@@ -9,7 +9,7 @@ type mainContentProps = {
 const MainContent = React.memo(({ children }: mainContentProps) => {
     return (
         <>
-            <Menu expandedControl={false} />
+            <MainHeader expandedControl={false} />
             <main className={`${styles.contentContainer}`}>{children}</main>
         </>
     );
