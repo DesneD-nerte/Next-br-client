@@ -1,4 +1,3 @@
-import React, { FormEvent, useState } from "react";
 import MyInput from "@ui/inputs/MyInput";
 import styles from "./LoginForm.module.scss";
 
@@ -10,12 +9,7 @@ type LoginInput = {
 };
 
 const LoginForm = () => {
-    const {
-        handleSubmit,
-        watch,
-        control,
-        formState: { errors },
-    } = useForm<LoginInput>();
+    const { handleSubmit, control } = useForm<LoginInput>();
 
     const onSubmit: SubmitHandler<LoginInput> = (data) => {
         console.log(data);
@@ -26,27 +20,31 @@ const LoginForm = () => {
             <Controller
                 name="email"
                 control={control}
-                rules={{ required: true }}
-                render={({ field }) => (
-                    <MyInput {...field} id="email-input" type="email" labelTitle="EMAIL*" />
+                rules={{ required: { value: true, message: "Email is required" } }}
+                render={({ field, fieldState }) => (
+                    <MyInput
+                        controlField={field}
+                        fieldState={fieldState}
+                        id="email-input"
+                        type="email"
+                        labelTitle="EMAIL*"
+                    />
                 )}
             />
-            {errors.email?.type === "required" && <p role="alert">Email is required</p>}
             <Controller
                 name="password"
                 control={control}
-                rules={{ required: true }}
-                render={({ field }) => (
+                rules={{ required: { value: true, message: "Password is required" } }}
+                render={({ field, fieldState }) => (
                     <MyInput
-                        {...field}
+                        controlField={field}
+                        fieldState={fieldState}
                         id="password-input"
                         type="password"
                         labelTitle="PASSWORD*"
                     />
                 )}
             />
-            {errors.password?.type === "required" && <p role="alert">Password is required</p>}
-
             <input type="submit" className="button button_mainButton" value={"CONTINUE"} />
         </form>
     );

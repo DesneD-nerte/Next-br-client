@@ -5,7 +5,7 @@ import styles from "./MainHeader.module.scss";
 import { useAppSelector } from "@store/hooks";
 import { setExpandMenu } from "@store/reducers/menu/MenuSlice";
 
-import routes from "@root/pages/site-map";
+import routes from "core/site-map.js";
 import { MenuSkip, MenuMain, Routes } from "@modules/Menu";
 
 type menuProps = {

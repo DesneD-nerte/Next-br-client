@@ -1,32 +1,33 @@
 import React, { useMemo } from "react";
 import styles from "./Input.module.scss";
+import { ControllerFieldState, ControllerRenderProps } from "react-hook-form";
 
 interface InputProps {
-    value?: string;
-    setValue?: React.Dispatch<React.SetStateAction<string>>;
+    controlField: Omit<ControllerRenderProps, "ref">;
+    fieldState: ControllerFieldState;
     id: string;
     type: string;
     labelTitle: string;
 }
 
 const MyInput = React.forwardRef<HTMLInputElement, InputProps>(function MyInput(
-    { value, setValue, id, type, labelTitle, ...props },
+    { controlField, fieldState, id, type, labelTitle, ...props },
     ref
 ) {
     const labelFixedClass = useMemo(() => {
-        return value ? styles.inputContainer__inputLabel_fixed : "";
-    }, [value]);
+        return controlField.value ? styles.inputContainer__inputLabel_fixed : "";
+    }, [controlField.value]);
 
     // Controlled Input
-    if (value && setValue) {
+    if (controlField) {
         return (
             <div className={styles.inputContainer}>
                 <input
                     id={id}
                     type={type}
                     className={styles.inputContainer__input}
-                    value={value}
-                    onChange={(event) => setValue(event.target.value)}
+                    value={controlField.value}
+                    onChange={(event) => controlField.onChange(event.target.value)}
                 ></input>
                 <label
                     htmlFor={id}
@@ -34,7 +35,7 @@ const MyInput = React.forwardRef<HTMLInputElement, InputProps>(function MyInput(
                 >
                     {labelTitle}
                 </label>
-                <span></span>
+                {fieldState.error && <p role="alert">{fieldState.error.message}</p>}
             </div>
         );
     }

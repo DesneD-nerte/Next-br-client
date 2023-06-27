@@ -12,6 +12,7 @@ interface mySelectProps<T> {
 }
 
 function MySelect<T>({ optionsArray }: mySelectProps<T>) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [pickedSort, setPickedSort] = useState<T>();
     const [openedList, setOpenedList] = useState(false);
 
