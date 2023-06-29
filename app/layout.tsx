@@ -10,14 +10,19 @@ import { appWithTranslation } from "next-i18next";
 import { Provider } from "react-redux";
 import { store } from "@store/store";
 import MainLayout from "@layouts/MainLayout";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    viewport: "idth=device-width, initial-scale=1",
+    icons: {
+        icon: "/favicon.ico"
+    }
+};
+
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
-            <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
             <Provider store={store}>
                 <MainLayout>
                     <Component {...pageProps} />
