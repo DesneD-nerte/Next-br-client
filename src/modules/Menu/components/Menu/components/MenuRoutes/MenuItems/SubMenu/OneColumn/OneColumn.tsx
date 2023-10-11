@@ -1,18 +1,18 @@
 import React from "react";
 import styles from "./OneColumn.module.scss";
-import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
 import { childRoutes } from "@src/types/routeProperties";
+import { useTranslation } from "@src/hooks/useTranslation";
 
 interface OneColumnMenuRoutesProps {
     oneColumn: childRoutes[];
 }
 
-const OneColumn = (props: OneColumnMenuRoutesProps) => {
+const OneColumn = async (props: OneColumnMenuRoutesProps) => {
     const { oneColumn } = props;
 
-    const { t } = useTranslation("menu");
+    const { t } = await useTranslation("menu");
 
     return (
         <ul className={styles.oneColumn}>

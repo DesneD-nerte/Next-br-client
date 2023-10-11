@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useCallback, useEffect } from "react";
 import styles from "./WithGallery.module.css";
 
@@ -15,28 +16,28 @@ type galleryProps = {
 };
 
 const WithGallery = React.memo(({ data, children }: galleryProps) => {
-    const dispatch = useAppDispatch();
+    // const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        dispatch(menuActions.mainMenuActions.setExpandMenu(true));
-    }, []);
+    // useEffect(() => {
+    //     dispatch(menuActions.mainMenuActions.setExpandMenu(true));
+    // }, []);
 
-    const onScroll = useCallback((event: any) => {
-        const { pageYOffset } = window;
-        if (pageYOffset === 0) {
-            dispatch(menuActions.mainMenuActions.setExpandMenu(true));
-        } else {
-            dispatch(menuActions.mainMenuActions.setExpandMenu(false));
-        }
-    }, []);
+    // const onScroll = useCallback((event: any) => {
+    //     const { pageYOffset } = window;
+    //     if (pageYOffset === 0) {
+    //         dispatch(menuActions.mainMenuActions.setExpandMenu(true));
+    //     } else {
+    //         dispatch(menuActions.mainMenuActions.setExpandMenu(false));
+    //     }
+    // }, []);
 
-    useEffect(() => {
-        window.addEventListener("scroll", onScroll, { passive: true });
+    // useEffect(() => {
+    //     window.addEventListener("scroll", onScroll, { passive: true });
 
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener("scroll", onScroll);
+    //     };
+    // }, []);
 
     return (
         <>

@@ -26,6 +26,7 @@
             "@templates/*": ["./src/templates/*"],
             "@hooks/*": ["./src/hooks/*"],
             "@store/*": ["./src/store/*"],
+            "@utils/*": ["./src/utils/*"],
             "@types/*": ["./src/types/*"],
             "@styles/*": ["./src/styles/*"],
             "@svg/*": ["./public/svg/*"]

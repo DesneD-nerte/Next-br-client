@@ -1,5 +1,6 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { useTranslation } from "next-i18next";
 import router from "next/router";
 
 import styles from "./MenuSearchForm.module.scss";
@@ -8,14 +9,15 @@ import { useAppDispatch } from "@store/hooks";
 import { menuActions } from "@modules/Menu/reducer";
 import { fetchItems } from "@modules/Menu/effects/getSearchMenuItems";
 import { useDebounce } from "@hooks/useDebounce";
+import { useTranslation } from "@src/hooks/useTranslation";
 
-const SearchForm = () => {
+const SearchForm = async () => {
     const [search, setSearch] = useState("");
     const debounced = useDebounce(search);
 
     const dispatch = useAppDispatch();
 
-    const { t } = useTranslation("menu");
+    const { t } = await useTranslation("menu");
 
     useEffect(() => {
         dispatch(fetchItems(debounced, 9));

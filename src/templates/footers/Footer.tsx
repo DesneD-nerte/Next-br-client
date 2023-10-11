@@ -1,9 +1,9 @@
-import { useTranslation } from "next-i18next";
 import React from "react";
 import FooterColumn from "./components/FooterColumn";
 import styles from "./Footer.module.scss";
+import { useTranslation } from "@src/hooks/useTranslation";
 
-const Footer = () => {
+const Footer = async () => {
     const firstLinksColumn = [
         { name: "footerHelpColumn-FAQs", href: "/faqs" },
         { name: "footerHelpColumn-siteMap", href: "/sitemap" },
@@ -17,7 +17,7 @@ const Footer = () => {
         { name: "footerContantsColumn-Facebook", href: "/facebook" },
     ];
 
-    const { t } = useTranslation("footer");
+    const { t } = await useTranslation("footer");
 
     return (
         <footer className={styles.footerContainer}>

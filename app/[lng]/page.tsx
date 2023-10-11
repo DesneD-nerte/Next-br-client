@@ -1,5 +1,6 @@
+"use client";
+
 import type { Metadata, NextPage } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { CircularProgress } from "@mui/material";
 
 import WithGallery from "@layouts/WithGallery/WithGallery";
@@ -36,12 +37,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-export async function getStaticProps({ locale }: { locale: string }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ["common", "footer", "menu"])),
-            // Will be passed to the page component as props
-        },
-    };
-}

@@ -3,33 +3,24 @@ import "bootstrap/dist/css/bootstrap.css";
 import "@styles/globals.css";
 import "@styles/_base.scss";
 
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import { appWithTranslation } from "next-i18next";
-
-import { Provider } from "react-redux";
-import { store } from "@store/store";
-import MainLayout from "@layouts/MainLayout";
 import { Metadata } from "next";
+import { StoreProvider } from "@src/store/StoreProvider";
 
 export const metadata: Metadata = {
     viewport: "idth=device-width, initial-scale=1",
     icons: {
-        icon: "/favicon.ico"
-    }
+        icon: "/favicon.ico",
+    },
 };
 
+interface Props {
+    children: React.ReactNode;
+}
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function RootLayout({ children }: Props) {
     return (
         <>
-            <Provider store={store}>
-                <MainLayout>
-                    <Component {...pageProps} />
-                </MainLayout>
-            </Provider>
+            <StoreProvider>{children}</StoreProvider>
         </>
     );
 }
-
-export default appWithTranslation(MyApp);

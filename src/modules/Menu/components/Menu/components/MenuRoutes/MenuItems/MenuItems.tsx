@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "./MenuItems.module.scss";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
-
+import { useTranslation } from "@hooks/useTranslation";
 import { routeProperties } from "@src/types/routeProperties";
 import SubMenu from "./SubMenu/SubMenu";
 import TriangleIcon from "@svg/menu/icon-menu-column.svg";
@@ -12,7 +11,7 @@ type menuItemsProps = {
     oneMenuRoute: routeProperties;
 };
 
-function MenuItems({ oneMenuRoute }: menuItemsProps) {
+async function MenuItems({ oneMenuRoute }: menuItemsProps) {
     const [dropDown, setDropDown] = useState(false);
     const delayedDropDown = useDebounce(dropDown, 200);
 
@@ -20,7 +19,7 @@ function MenuItems({ oneMenuRoute }: menuItemsProps) {
         setDropDown(dropState);
     };
 
-    const { t } = useTranslation("menu");
+    const { t } = await useTranslation("ru");
 
     return (
         <li

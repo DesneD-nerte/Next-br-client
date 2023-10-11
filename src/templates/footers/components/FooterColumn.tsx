@@ -1,7 +1,7 @@
-import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import React from "react";
 import styles from "./FooterColumn.module.scss";
+import { useTranslation } from "@src/hooks/useTranslation";
 
 interface ILinks {
     name: string;
@@ -13,8 +13,8 @@ interface IFooterColumnProps {
     links: ILinks[];
 }
 
-const FooterColumn = (props: IFooterColumnProps) => {
-    const { t } = useTranslation("footer");
+const FooterColumn = async (props: IFooterColumnProps) => {
+    const { t } = await useTranslation("footer");
 
     return (
         <div>

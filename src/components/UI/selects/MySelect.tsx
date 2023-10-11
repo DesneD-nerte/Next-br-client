@@ -1,6 +1,6 @@
-import { useTranslation } from "next-i18next";
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./MySelect.module.scss";
+import { useTranslation } from "@src/hooks/useTranslation";
 
 export interface mySelectOptions<T> {
     option?: T;
@@ -11,14 +11,14 @@ interface mySelectProps<T> {
     optionsArray: mySelectOptions<T>[];
 }
 
-function MySelect<T>({ optionsArray }: mySelectProps<T>) {
+async function MySelect<T>({ optionsArray }: mySelectProps<T>) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [pickedSort, setPickedSort] = useState<T>();
     const [openedList, setOpenedList] = useState(false);
 
     const refDiv = useRef<HTMLDivElement>(null);
 
-    const { t } = useTranslation("common");
+    const { t } = await useTranslation("common");
 
     const handleClick = () => {
         setOpenedList(!openedList);
