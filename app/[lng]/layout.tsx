@@ -16,12 +16,12 @@ interface Props {
 export default function LanguageLayout({ children, params: { lng } }: Props) {
     return (
         <html lang={lng} dir={dir(lng)}>
-            {/* <MainLayout> */}
-            <>
-                <head />
-                <body>{children}</body>
-            </>
-            {/* </MainLayout> */}
+            <MainLayout>
+                <>
+                    <head />
+                    <body>{children}</body>
+                </>
+            </MainLayout>
         </html>
     );
 }
