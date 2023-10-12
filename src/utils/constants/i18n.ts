@@ -1,5 +1,5 @@
 const fallbackLng = "en";
-const languages = [fallbackLng, "de"];
+const languages = [fallbackLng, "ru"];
 const defaultNS = "translation";
 const cookieName = "i18next";
 

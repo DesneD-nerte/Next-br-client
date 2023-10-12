@@ -3,21 +3,21 @@ import FooterColumn from "./components/FooterColumn";
 import styles from "./Footer.module.scss";
 import { useTranslation } from "@src/hooks/useTranslation";
 
-const Footer = async () => {
-    const firstLinksColumn = [
-        { name: "footerHelpColumn-FAQs", href: "/faqs" },
-        { name: "footerHelpColumn-siteMap", href: "/sitemap" },
-    ];
-    const secondLinksColumn = [
-        { name: "footerCompanyColumn-BR", href: "/about" },
-        { name: "footerCompanyColumn-PrivacyAndCookies", href: "/cookies" },
-    ];
-    const thirdLinksColumn = [
-        { name: "footerContantsColumn-Instagram", href: "/instagram" },
-        { name: "footerContantsColumn-Facebook", href: "/facebook" },
-    ];
+const firstLinksColumn = [
+    { name: "footerHelpColumn-FAQs", href: "/faqs" },
+    { name: "footerHelpColumn-siteMap", href: "/sitemap" },
+];
+const secondLinksColumn = [
+    { name: "footerCompanyColumn-BR", href: "/about" },
+    { name: "footerCompanyColumn-PrivacyAndCookies", href: "/cookies" },
+];
+const thirdLinksColumn = [
+    { name: "footerContantsColumn-Instagram", href: "/instagram" },
+    { name: "footerContantsColumn-Facebook", href: "/facebook" },
+];
 
-    const { t } = await useTranslation("footer");
+const Footer = async () => {
+    const { t } = await useTranslation("en", "footer");
 
     return (
         <footer className={styles.footerContainer}>
@@ -40,4 +40,4 @@ const Footer = async () => {
     );
 };
 
-export default React.memo(Footer);
+export default Footer;

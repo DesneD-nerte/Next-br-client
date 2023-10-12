@@ -1,9 +1,14 @@
 import React, { Fragment } from "react";
-import Head from "next/head";
 import { useRouter } from "next/router";
 
 import WithGallery from "@layouts/WithGallery/WithGallery";
 import { IDataGallery } from "@models/IDataGallery";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Pants | Bond Reality",
+    description: "Look at the entire collection of Bond Shop pants.",
+};
 
 const data: IDataGallery[] = [
     {
@@ -26,14 +31,6 @@ function ItemPants() {
     const { name } = router.query;
     return (
         <Fragment>
-            <Head>
-                <title>Pants | Bond Reality</title>
-                <meta
-                    name="description"
-                    content="Look at the entire collection of Bond Shop pants."
-                />
-            </Head>
-
             <WithGallery data={data}>
                 <div>Pants: {name}</div>
             </WithGallery>

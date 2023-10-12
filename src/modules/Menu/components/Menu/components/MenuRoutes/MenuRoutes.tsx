@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import styles from "./Routes.module.scss";
 
 import MenuItems from "./MenuItems/MenuItems";

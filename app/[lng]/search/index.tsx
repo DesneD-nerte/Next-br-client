@@ -1,7 +1,5 @@
 import { Fragment, useCallback, useState } from "react";
-import type { NextPage } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
+import type { Metadata, NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./search.module.scss";
@@ -9,6 +7,11 @@ import styles from "./search.module.scss";
 import MainContent from "@layouts/MainContent/MainContent";
 import FilterPanel from "@components/pages/search/FilterPanel";
 import ControlPanel from "@components/pages/search/ControlPanel";
+
+export const metadata: Metadata = {
+    title: "Search | Bond Reality",
+    description: "Search exactly what you want.",
+};
 
 const Search: NextPage = () => {
     // const [allItems, setAllItems] = useState();
@@ -22,11 +25,6 @@ const Search: NextPage = () => {
 
     return (
         <Fragment>
-            <Head>
-                <title>Search | Bond Reality</title>
-                <meta name="description" content="Search exactly what you want." />
-            </Head>
-
             <MainContent>
                 <div className={"row g-0 w-100"}>
                     {isOpenedFilterPanel && (
@@ -101,13 +99,5 @@ const Search: NextPage = () => {
         </Fragment>
     );
 };
-
-export async function getStaticProps({ locale }: { locale: string }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ["common", "footer", "menu"])),
-        },
-    };
-}
 
 export default Search;

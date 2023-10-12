@@ -1,7 +1,4 @@
-"use client";
-
 import type { Metadata, NextPage } from "next";
-import { CircularProgress } from "@mui/material";
 
 import WithGallery from "@layouts/WithGallery/WithGallery";
 import { IDataGallery } from "@models/IDataGallery";
@@ -30,7 +27,7 @@ const Home: NextPage = () => {
     return (
         <>
             <WithGallery data={data}>
-                <CircularProgress sx={{ color: "#2c2c2c" }}></CircularProgress>
+                <div></div>
             </WithGallery>
         </>
     );

@@ -1,15 +1,13 @@
 import React, { Fragment } from "react";
-import Head from "next/head";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Men | Bond Reality",
+    description: "Men's category of the Bond Shop.",
+};
 
 const index = () => {
-    return (
-        <Fragment>
-            <Head>
-                <title>Men | Bond Reality</title>
-                <meta name="description" content="Men's category of the Bond Shop." />
-            </Head>
-        </Fragment>
-    );
+    return <Fragment></Fragment>;
 };
 
 export default index;

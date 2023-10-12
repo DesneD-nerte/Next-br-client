@@ -24,7 +24,6 @@ async function MenuItems({ oneMenuRoute }: menuItemsProps) {
     return (
         <li
             className={styles.onePath}
-            key={oneMenuRoute.path}
             onMouseEnter={() => handleFocus(true)}
             onMouseLeave={() => handleFocus(false)}
             onFocus={() => handleFocus(true)}
